@@ -21,7 +21,7 @@ int main() {
 // Define Export To CSV Function
 int exportToCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) {
 
-          // Define Variables
+          // Define File
           FILE *fpt;
 
           // Open File in write mode
