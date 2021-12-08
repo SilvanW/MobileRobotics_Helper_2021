@@ -17,7 +17,9 @@ int exportToCSV(char Filename[50], char Date[50], char Time[50], char Theme[50],
           FILE *fpt;
 
           // Open File in write mode
-          fpt = fopen(Filename, "w");
+          fpt = fopen(Filename, "a");
+
+
 
           // Append Data to File
           fprintf(fpt,"%s, %s, %s, %d\n", Date, Time, Theme, Points);
