@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-10" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="silvanwiedmer" created="2021-12-10" changedby="silvanwiedmer" changed="2021-12-10" origin="Structorizer 3.30-10" text="&#34;Main&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<while text="&#34;while 1&#34;" comment="" color="ffffff" disabled="0">
+			<qWhile>
+				<case text="&#34;Mode&#34;,&#34;Mathematik&#34;,&#34;Physik&#34;,&#34;Optik&#34;,&#34;Elektronik&#34;,&#34;Converter&#34;,&#34;Auswertung&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+					<qCase>
+						<case text="&#34;Semester&#34;,&#34;Mathematik_1&#34;,&#34;Mathematik_2&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+							<qCase>
+								<case text="&#34;Thema&#34;,&#34;Linalg&#34;,&#34;Quiz&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+								</case>
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+						</case>
+					</qCase>
+					<qCase>
+						<case text="&#34;Semester&#34;,&#34;Physik_1&#34;,&#34;Physik_2&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+							<qCase>
+								<case text="&#34;Thema&#34;,&#34;Quiz&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+								</case>
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+						</case>
+					</qCase>
+					<qCase>
+						<case text="&#34;Semester&#34;,&#34;Optik_1&#34;,&#34;Optik_2&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+							<qCase>
+								<case text="&#34;Thema&#34;,&#34;Formeln&#34;,&#34;Quiz&#34;,&#34;Spiegelsimulation&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+								</case>
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+						</case>
+					</qCase>
+					<qCase>
+						<case text="&#34;Semester&#34;,&#34;Elektronik_1&#34;,&#34;Elektronik_2&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+							<qCase>
+								<case text="&#34;Thema&#34;,&#34;Elektronik&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+									<qCase color="ffffff">
+									</qCase>
+									<qCase color="ffffff">
+									</qCase>
+								</case>
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+							<qCase color="ffffff">
+							</qCase>
+						</case>
+					</qCase>
+					<qCase color="ffffff">
+					</qCase>
+					<qCase color="ffffff">
+					</qCase>
+					<qCase color="ffffff">
+					</qCase>
+				</case>
+			</qWhile>
+		</while>
+	</children>
+</root>
