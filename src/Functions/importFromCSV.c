@@ -36,7 +36,7 @@ char num[50];
 int main() {
           fpt = fopen("test.csv", "r");
           
-          while(fscanf(fpt, "%c, %c, %c, %d", char1, char2, char3, &percent)) {
+          while(fscanf(fpt, "%c, %c, %c, %d", char1, char2, char3, &percent) == 2) {
                     printf("%s, %s, %s, %d", char1, char2, char3, percent);
           }
           
