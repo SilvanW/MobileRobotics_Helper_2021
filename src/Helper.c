@@ -220,6 +220,6 @@ int main()
 	}
 	
 	// Verabschiedung
-	printf("\nAuf Wiedersehen!");
+	printf("\nAuf Wiedersehen! \n");
 	return 0;
 }
