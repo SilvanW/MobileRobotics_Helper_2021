@@ -17,8 +17,8 @@
 #include <stdbool.h>
 
 // Inkludieren der Programmressourcen
-#include "file_name.h"
-#include "file_name.h"
+// #include "file_name.h"
+// #include "file_name.h"
 
 // Restsymbole aus dem Eingabespeicher löschen
 void delInput(void)
@@ -32,6 +32,7 @@ void delInput(void)
 
 int main(void)
 {
+	printf("Dini mami");
 	
 	return 0;
 }
