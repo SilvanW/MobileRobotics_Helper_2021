@@ -1,7 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-int main() {
+// Define variables
+char day[10];
+char mon[10];
+char year[10];
+char dateNew[40];
+
+char hour[10];
+char min[10];
+char timeNew[30];
+
+char *getDate() {
           // Define Time variable
           time_t s;
 
@@ -13,16 +25,42 @@ int main() {
           
           // Set Current_Time to localtime from Time variable
           current_time = localtime(&s);
-          
-          // Print values to console
-          printf("Day of the month = %d\n",current_time->tm_mday);
-          printf("Day in this year = %d\n",current_time->tm_yday);
-          printf("Day in this week = %d\n",current_time->tm_wday);
-          printf("Month of this year = %d\n",(current_time->tm_mon + 1));
-          printf("Current year = %d\n",(current_time->tm_year + 1900));
-          printf("hour:min:sec = %02d:%02d:%02d\n",current_time->tm_hour,current_time->tm_min,current_time->tm_sec);
-          
-          // return 0
-          return 0;
 
+          // Convert Day / Month / Year values to strings
+          sprintf(day, "%d." ,current_time->tm_mday);
+          sprintf(mon, "%d.",(current_time->tm_mon + 1));
+          sprintf(year, "%d",(current_time->tm_year - 100));
+          
+          // Create date Char
+          strcat(dateNew,day);
+          strcat(dateNew,mon);
+          strcat(dateNew,year);
+
+          // return date
+          return dateNew;
+}
+
+char *getTime() {
+          // Define Time variable
+          time_t s;
+
+          // Define Time struct
+          struct tm* current_time;
+          
+          // Set Time variable to NULL
+          s = time(NULL);
+          
+          // Set Current_Time to localtime from Time variable
+          current_time = localtime(&s);
+
+          // Convert Hour / Minute values to strings
+          sprintf(hour, "%d." ,current_time->tm_hour);
+          sprintf(min, "%d",current_time->tm_min);
+          
+          // Create timeNew Char
+          strcat(timeNew,hour);
+          strcat(timeNew,min);
+
+          // return date
+          return timeNew;
 }
