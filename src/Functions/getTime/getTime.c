@@ -56,7 +56,19 @@ char *getTime() {
           // Convert Hour / Minute values to strings
           sprintf(hour, "%d." ,current_time->tm_hour);
           sprintf(min, "%d",current_time->tm_min);
-          
+
+          // Check if Hour is = 0
+          if (strcmp(hour,"0")) {
+                    // Change value to 00.
+                    strcpy(hour, "00.");
+          }
+
+          // Check if Minute is = 0
+          if (!strcmp(min,"0")) {
+                    // Change value to 00.
+                    strcpy(min,"00");
+          }
+
           // Create timeNew Char
           strcat(timeNew,hour);
           strcat(timeNew,min);
