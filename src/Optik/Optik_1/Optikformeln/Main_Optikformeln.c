@@ -18,27 +18,17 @@
 #include <stdbool.h>
 
 // Inkludieren der Programmressourcen
-// #include "file_name.h"
-// #include "file_name.h"
+//#include "DelInput.h"
+//#include "Thema_1.h"
+//#include "Thema_2.h"
+//#include "Thema_3.h"
+//#include "Thema_4.h"
 
 // Variabeln Definieren
 int Thema = 0;
 
-
 // Rückgabewerte von scanf Funktion
 int retVal1 = 0;
-
-// Hilfreiche Funktionen
-// Restsymbole aus dem Eingabespeicher löschen
-void delInput(void)
-{
-	int c;
-	//Liest alle Zeichen bis zum Schluss aus.
-	while ((c = getchar()) != '\n' && c != EOF)
-	{
-	}
-}
-
 
 int main(void)
 {
@@ -61,18 +51,22 @@ int main(void)
 	{
 		case 1:
 		printf("Du hast Reflexion und Brechung gewählt.\n");
+		Thema_1();
 		break;
 	
 		case 2:
 		printf("Du hast Bildenstehung, Spiegel und Linsen gewählt.\n");
+		Thema_2();
 		break;
 	
 		case 3:
 		printf("Du hast Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente gewählt.\n");
+		Thema_3();
 		break;
 	
 		case 4:
 		printf("Du hast alle genannten Themen ausgewählt.\n");
+		Thema_4();
 		break;
 		
 		default:

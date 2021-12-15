@@ -4,6 +4,7 @@
  * Firma: FHGR / Photonics
  * Version: 0.1
  * Datum: 15.12.2021
+ * Beschreibung: Hier wird die Frage gestellt und ausgewertet
  * Änderungen:
  * 0.1 15.12.2021 Erste Version
  */
@@ -14,14 +15,18 @@
 #include <string.h>
 #include <stdbool.h>
 
-// Restsymbole aus dem Eingabespeicher löschen
-void delInput(void)
+// Inkludieren der Programmressourcen
+//#include "DelInput.h"
+//#include "Auswertung.h"
+
+
+
+int Frage(void)
 {
-	int c;
-	//Liest alle Zeichen bis zum Schluss aus.
-	while ((c = getchar()) != '\n' && c != EOF)
-	{
-	}
-	
-	return;
+
+
+
+return;    
 }
+
+
