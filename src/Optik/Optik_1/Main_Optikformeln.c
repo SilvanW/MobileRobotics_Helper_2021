@@ -2,12 +2,13 @@
  * Main_Optikformeln.c
  * Autor: Rebsamen Adrian
  * Firma: FHGR / Photonics
- * Version: 0.1
- * Datum: 13.12.2021
+ * Version: 0.2
+ * Datum: 15.12.2021
  * Beschreibung: Helfer zum Optikformeln und deren Anwendung zu lernen.
  * Dieses File führt die Multiplechoice Aufgaben auf und Sie können das Themengebiet auswählen.
  * Änderungen:
  * 0.1 13.12.2021 Erste Version
+ * 0.2 15.12.2021 Erweiterung für die Auswahl
  */
 
 // Inkludieren der Programmbibliotheken
@@ -17,8 +18,11 @@
 #include <stdbool.h>
 
 // Inkludieren der Programmressourcen
-//#include "Randomgenerator.h"
-//#include "file_name.h"
+//#include "Thema_1.h"
+//#include "Thema_2.h"
+//#include "Thema_3.h"
+//#include "Thema_4.h"
+//#include "DelInput.h"
 
 // Variabeln Definieren
 int Thema = 0;
@@ -67,7 +71,7 @@ int main(void)
 		break;
 	
 		case 3:
-		printf("Du hast Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente gwählt.\n");
+		printf("Du hast Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente gewählt.\n");
 		break;
 	
 		case 4:
@@ -77,6 +81,8 @@ int main(void)
 		default:
 		printf("Deine Auswahl ist nicht gültig.\n");
 	}
+	
+	
 	
 	return 0;
 }

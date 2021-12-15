@@ -1,0 +1,21 @@
+/*
+ * DelInput.c
+ * Autor: Rebsamen Adrian
+ * Firma: FHGR / Photonics
+ * Version: 0.1
+ * Datum: 15.12.2021
+ * Änderungen:
+ * 0.1 15.12.2021 Erste Version
+ */
+
+// Restsymbole aus dem Eingabespeicher löschen
+void delInput(void)
+{
+	int c;
+	//Liest alle Zeichen bis zum Schluss aus.
+	while ((c = getchar()) != '\n' && c != EOF)
+	{
+	}
+	
+	return;
+}
