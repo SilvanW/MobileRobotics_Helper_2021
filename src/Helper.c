@@ -8,9 +8,11 @@
 
 
 #include <stdio.h>
-#include "Functions/exportToCSV.h"
+#include "Functions/exportToCSV/exportToCSV.h"
+#include "Functions/importFromCSV/importFromCSV.h"
 
 int main() {
           exportToCSV("test.csv","08.12.21","22:13","Mathematik_1",50);
+          importFromCSV("test.csv");
           return 0;
 }
