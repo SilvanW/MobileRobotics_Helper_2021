@@ -12,6 +12,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 // Define Dataset Structure
 typedef struct {
           char Date[50];
@@ -30,6 +36,7 @@ FILE *fpt;
 
 // Call Main Routine
 int main() {
+
           fpt = fopen("test.csv", "r");
 
           if (!fpt) {
@@ -71,8 +78,21 @@ int main() {
 
           fclose(fpt);
 
+          printf("Thema: %s \n", values[0].Theme);
+
+          sleep(1);
+
           for(int i = 0; i < rowCount; i++) {
-                    printf("Daten: %s, %s, %s, %s", values[i].Date, values[i].Time, values[i].Theme, values[i].Points);
+                    int prozent = atoi(values[i].Points);
+
+                    printf("%s %s ", values[i].Date, values[i].Time);
+                    
+                    for(int index = 1; index <= (prozent / 10); index++) {
+                              printf("#");
+                    }
+                    printf("[%d%%]", prozent);
                     printf("\n");
+
+                    sleep(1);
           }   
 }
