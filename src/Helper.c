@@ -8,7 +8,6 @@
 
 
 #include <stdio.h>
-#include "Functions/exportToCSV.h"
 
 int main()
 {
