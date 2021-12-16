@@ -243,8 +243,12 @@ int main()
 			break;
 			
 		case 6: printf("Auswertung\n"); // Case 6 => Auswertung
+
+                              // Read data from test.csv
                               importFromCSV("test.csv");
-                              importFromCSV("test.csv");
+
+                              // Read data from Optik_1/Auswertung.csv
+                              importFromCSV("Optik/Optik_1/Auswertung.csv");
 		break;
 		
 		default: printf("Falscher Wert!");

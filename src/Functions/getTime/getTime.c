@@ -1,3 +1,13 @@
+/*
+ * Function: get Date & Time
+ * 
+ * Author: Silvan Wiedmer
+ * Created: 15.12.2021
+ * 
+ * 15.12.2021 - First Version of the Program
+ * 16.12.2021 - Checking Time for one digit => change to two digits
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
