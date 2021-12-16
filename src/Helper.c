@@ -8,12 +8,7 @@
 
 
 #include <stdio.h>
-#include "Functions/exportToCSV/exportToCSV.h"
-#include "Functions/importFromCSV/importFromCSV.h"
-#include "Functions/getTime/getTime.h"
 
 int main() {
-          exportToCSV("test.csv",getDate(),getTime(),"Mathematik_1",50);
-          importFromCSV("test.csv");
           return 0;
 }
