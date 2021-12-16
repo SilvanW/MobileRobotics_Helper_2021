@@ -57,16 +57,16 @@ char *getTime() {
           sprintf(hour, "%d." ,current_time->tm_hour);
           sprintf(min, "%d",current_time->tm_min);
 
-          // Check if Hour is = 0
-          if (strcmp(hour,"0")) {
-                    // Change value to 00.
-                    strcpy(hour, "00.");
+          // Check if Hour has one digit
+          if (current_time->tm_hour < 10) {
+                    // Add 0 before value
+                    sprintf(hour, "0%d.", current_time->tm_hour);
           }
 
-          // Check if Minute is = 0
-          if (!strcmp(min,"0")) {
-                    // Change value to 00.
-                    strcpy(min,"00");
+          // Check if Minute has one digit
+          if (current_time->tm_min < 10) {
+                    // Add 0 before value
+                    sprintf(min, "0%d", current_time->tm_min);
           }
 
           // Create timeNew Char
