@@ -8,6 +8,7 @@
 
 
 #include <stdio.h>
+#include "Functions/importFromCSV/importFromCSV.h"
 
 int main()
 {
@@ -36,7 +37,7 @@ int main()
 	// switch case
 	switch(Hauptmenu)
 	{
-		case 1: printf("Mathematik");
+		case 1: printf("Mathematik"); // Case 1 => Mathematik
 			
 			// Auswahl Untermenü Mathe
 			printf("\n");
@@ -48,9 +49,9 @@ int main()
                               // New Line
                               printf("\n");
 			
-			switch(Mathematik)
+			switch(Mathematik) // Swtich Mathematik
 			{
-				case 1: printf("Mathematik 1");
+				case 1: printf("Mathematik 1"); // Case 1 => Mathematik 1
 					
 					// Auswahl Untermenü Mathe 1
 					printf("\n");
@@ -62,7 +63,7 @@ int main()
                                                   // New Line
                                                   printf("\n");
 			
-					switch(Mathematik1)
+					switch(Mathematik1) // Switch Mathematik 1
 					{
 						case 1: printf("Linalg");
 						break;
@@ -73,7 +74,7 @@ int main()
 					}
 				break;
 				
-				case 2: printf("Mathematik 2");
+				case 2: printf("Mathematik 2"); // Case 2 => Mathematik 2
 					
 					// Auswahl Untermenü Mathe 2
 					printf("\n");
@@ -83,7 +84,7 @@ int main()
 			}
 			break;
 
-		case 2: printf("\nPhysik");
+		case 2: printf("\nPhysik"); // Case 2 => Physik
 		
 			// Auswahl Untermenü Physik
 			printf("\n");
@@ -95,9 +96,9 @@ int main()
                               // New Line
                               printf("\n");
 			
-			switch(Physik)
+			switch(Physik) // Swtich Physik
 			{
-				case 1: printf("Physik 1");
+				case 1: printf("Physik 1"); // Case 1 => Physik 1
 					
 					// Auswahl Untermenü Physik 1
 					printf("\n");
@@ -108,7 +109,7 @@ int main()
                                                   // New Line
                                                   printf("\n");
 			
-					switch(Physik1)
+					switch(Physik1) // Switch Physik 1
 					{
 						case 1: printf("Quiz");
 						break;
@@ -117,7 +118,7 @@ int main()
 					}
 				break;
 				
-				case 2: printf("Physik 2");
+				case 2: printf("Physik 2"); // Case 2 => Physik 2
 					
 					// Auswahl Untermenü Physik 2
 					printf("\n");
@@ -127,7 +128,7 @@ int main()
 			}
 			break;
 			
-		case 3: printf("Optik");
+		case 3: printf("Optik"); // Case 3 => Optik
 			
 			// Auswahl Untermenü Optik
 			printf("\n");
@@ -139,9 +140,9 @@ int main()
                               // New Line
                               printf("\n");
 			
-			switch(Optik)
+			switch(Optik) // Switch Optik
 			{
-				case 1: printf("Optik 1");
+				case 1: printf("Optik 1"); // Case 1 => Optik 1
 					
 					// Auswahl Untermenü Optik 1
 					printf("\n");
@@ -154,20 +155,20 @@ int main()
                                                   // New Line
                                                   printf("\n");
 			
-					switch(Optik1)
+					switch(Optik1) // Switch Optik1
 					{
-						case 1: printf("Formeln");
+						case 1: printf("Formeln"); // Case 1 => Formeln
 						break;
-						case 2: printf("Quiz");
+						case 2: printf("Quiz"); // Case 2 => Quiz
 						break;
-						case 3: printf("Spiegelsimulation");
+						case 3: printf("Spiegelsimulation"); // Case 3 => Spiegelsimulation
 						break;
-						default: printf("Falscher Wert!");
+						default: printf("Falscher Wert!"); // Default Case
 						break;
 					}
 				break;
 				
-				case 2: printf("Optik 2");
+				case 2: printf("Optik 2"); // Case 2 => Optik 2
 					
 					// Auswahl Untermenü Optik 2
 					printf("\n");
@@ -176,7 +177,7 @@ int main()
 			}
 			break;
 			
-		case 4: printf("Elektronik");
+		case 4: printf("Elektronik"); // Case 4 => Elektronik
 		
 			// Auswahl Untermenü Elektronik
 			printf("\n");
@@ -188,9 +189,9 @@ int main()
                               // New Line
                               printf("\n");
 			
-			switch(Elektronik)
+			switch(Elektronik) // Switch Elektronik
 			{
-				case 1: printf("Elektronik 1");
+				case 1: printf("Elektronik 1"); // Case 1 => Elektronik 1
 					
 					// Auswahl Untermenü Elektronik 1
 					printf("\n");
@@ -201,16 +202,16 @@ int main()
                                                   // New Line
                                                   printf("\n");
 			
-					switch(Elektronik1)
+					switch(Elektronik1) // Swtich Elektronik1
 					{
-						case 1: printf("Elektronik");
+						case 1: printf("Elektronik"); // Case 1 => Elektronik
 						break;
-						default: printf("Falscher Wert!");
+						default: printf("Falscher Wert!"); // Default Case => Falscher Wert
 						break;
 					}
 				break;
 				
-				case 2: printf("Elektronik 2");
+				case 2: printf("Elektronik 2"); // Case 2 => Elektronik 2
 					
 					// Auswahl Untermenü Elektronik 2
 					printf("\n");
@@ -220,7 +221,7 @@ int main()
 			}
 			break;
 			
-		case 5: printf("Converter");
+		case 5: printf("Converter"); // Case 5 => Converter
 		
 			// Auswahl Untermenü Converter
 			printf("\n");
@@ -232,16 +233,18 @@ int main()
                               // New Line
                               printf("\n");
 			
-			switch(Converter)
+			switch(Converter) // Switch Converter
 			{
-				case 1: printf("Zahlensystem");
+				case 1: printf("Zahlensystem"); // Case 1 => Zahlensystem
 				break;
-				case 2: printf("Einheiten");
+				case 2: printf("Einheiten"); // Case 2 => Einheiten
 				break;	
 			}
 			break;
 			
-		case 6: printf("Auswertung");
+		case 6: printf("Auswertung\n"); // Case 6 => Auswertung
+                              importFromCSV("test.csv");
+                              importFromCSV("test.csv");
 		break;
 		
 		default: printf("Falscher Wert!");

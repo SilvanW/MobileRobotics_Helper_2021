@@ -119,7 +119,13 @@ int importFromCSV(char Filename[50]) {
 
                     // Sleep for 1 second
                     sleep(1);
-          }  
+          }
+
+          // New Line
+          printf("\n");
+
+          // Set rowCount to 0 => Required for multiple function calls
+          rowCount = 0;
 
           return 0;
 }
