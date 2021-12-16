@@ -28,7 +28,10 @@ int main()
 	printf("-5- Converter\n");
 	printf("-6- Auswertung\n");
 	printf("Bitte gib eine Zahl ein: ");
-	scanf("%i", &Hauptmenu);	
+	scanf("%i", &Hauptmenu);
+
+          // New Line
+          printf("\n");	
 	
 	// switch case
 	switch(Hauptmenu)
@@ -41,6 +44,9 @@ int main()
 			printf("-2- Mathematik 2\n");
 			printf("Bitte gib eine Zahl ein: ");
 			scanf("%i", &Mathematik);
+
+                              // New Line
+                              printf("\n");
 			
 			switch(Mathematik)
 			{
@@ -52,6 +58,9 @@ int main()
 					printf("-2- Quiz\n");
 					printf("Bitte gib eine Zahl ein: ");
 					scanf("%i", &Mathematik1);
+
+                                                  // New Line
+                                                  printf("\n");
 			
 					switch(Mathematik1)
 					{
@@ -74,7 +83,7 @@ int main()
 			}
 			break;
 
-		case 2: printf("Physik");
+		case 2: printf("\nPhysik");
 		
 			// Auswahl Untermenü Physik
 			printf("\n");
@@ -82,6 +91,9 @@ int main()
 			printf("-2- Physik 2\n");
 			printf("Bitte gib eine Zahl ein: ");
 			scanf("%i", &Physik);
+
+                              // New Line
+                              printf("\n");
 			
 			switch(Physik)
 			{
@@ -92,6 +104,9 @@ int main()
 					printf("-1- Quiz\n");
 					printf("Bitte gib eine Zahl ein: ");
 					scanf("%i", &Physik1);
+
+                                                  // New Line
+                                                  printf("\n");
 			
 					switch(Physik1)
 					{
@@ -120,6 +135,9 @@ int main()
 			printf("-2- Optik 2\n");
 			printf("Bitte gib eine Zahl ein: ");
 			scanf("%i", &Optik);
+
+                              // New Line
+                              printf("\n");
 			
 			switch(Optik)
 			{
@@ -132,6 +150,9 @@ int main()
 					printf("-3- Spiegelsimulation\n");
 					printf("Bitte gib eine Zahl ein: ");
 					scanf("%i", &Optik1);
+
+                                                  // New Line
+                                                  printf("\n");
 			
 					switch(Optik1)
 					{
@@ -163,6 +184,9 @@ int main()
 			printf("-2- Elektronik 2\n");
 			printf("Bitte gib eine Zahl ein: ");
 			scanf("%i", &Elektronik);
+
+                              // New Line
+                              printf("\n");
 			
 			switch(Elektronik)
 			{
@@ -173,6 +197,9 @@ int main()
 					printf("-1- Elektronik\n");
 					printf("Bitte gib eine Zahl ein: ");
 					scanf("%i", &Elektronik1);
+
+                                                  // New Line
+                                                  printf("\n");
 			
 					switch(Elektronik1)
 					{
@@ -201,6 +228,9 @@ int main()
 			printf("-2- Einheiten\n");
 			printf("Bitte gib eine Zahl ein: ");
 			scanf("%i", &Converter);
+
+                              // New Line
+                              printf("\n");
 			
 			switch(Converter)
 			{
