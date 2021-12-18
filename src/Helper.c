@@ -4,6 +4,8 @@
 * Autor: Silvan Wiedmer (Projektleiter), Ramona Ferri, Tim Barmettler (Praktikant)
 * Erstellungsdatum: 13.12.21
 * Version: 1.0 - Aufruf Export und CSV
+* Version: 1.1 - Lesen von Ausertungs CSV
+* Version: 1.2 - Hangman implementiert
 */
 
 
