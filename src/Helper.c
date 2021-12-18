@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include "Functions/importFromCSV/importFromCSV.h"
+#include "Mathematik/Mathematik_1/Hangman/piehangman.h"
 
 int main()
 {
@@ -57,6 +58,7 @@ int main()
 					printf("\n");
 					printf("-1- Linalg\n");
 					printf("-2- Quiz\n");
+					printf("-3- Hangman\n");
 					printf("Bitte gib eine Zahl ein: ");
 					scanf("%i", &Mathematik1);
 
@@ -66,11 +68,14 @@ int main()
 					switch(Mathematik1) // Switch Mathematik 1
 					{
 						case 1: printf("Linalg");
-						break;
+							break;
 						case 2: printf("Quiz");
-						break;
+							break;
+						case 3: printf("Hangman");
+							hangman();
+							break;
 						default: printf("Falscher Wert!");
-						break;
+							break;
 					}
 				break;
 				
