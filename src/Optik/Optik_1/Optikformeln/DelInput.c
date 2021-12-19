@@ -1,13 +1,11 @@
 /*
- * Main_Optikformeln.c
+ * DelInput.c
  * Autor: Rebsamen Adrian
  * Firma: FHGR / Photonics
  * Version: 0.1
- * Datum: 13.12.2021
- * Beschreibung: Helfer zum Optikformeln und deren Anwendung zu lernen.
- * Dieses File führt die Multiplechoice Aufgaben auf und Sie können das Themengebiet auswählen.
+ * Datum: 15.12.2021
  * Änderungen:
- * 0.1 13.12.2021 Erste Version
+ * 0.1 15.12.2021 Erste Version
  */
 
 // Inkludieren der Programmbibliotheken
@@ -15,10 +13,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
-// Inkludieren der Programmressourcen
-#include "file_name.h"
-#include "file_name.h"
 
 // Restsymbole aus dem Eingabespeicher löschen
 void delInput(void)
@@ -28,10 +22,6 @@ void delInput(void)
 	while ((c = getchar()) != '\n' && c != EOF)
 	{
 	}
-}
-
-int main(void)
-{
 	
-	return 0;
+	return;
 }
