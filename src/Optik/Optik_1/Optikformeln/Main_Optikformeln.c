@@ -26,15 +26,14 @@ int Thema = 0;
 // Rückgabewerte von scanf Funktion
 int retVal1 = 0;
 
-//Funktionsdeklaration
-int importFromCSV(char[50]);
-
 // Define Dataset Structure
 typedef struct {
-          char Date[50];
-          char Time[50];
-          char Theme[50];
-          char Points[50];
+          char Frage[100];
+          char Antwort1[100];
+          char Antwort2[100];
+          char Antwort3[100];
+          char Antwort4[100];
+          char Antwort[100];
 } Dataset;
 
 // Define Variables
@@ -45,6 +44,85 @@ Dataset values[999];
 
 // Define File Pointer
 FILE *fpt;
+
+//Funktionsdeklaration
+int importFromCSV(char Filename[50]) {
+
+          // Open File in read mode and save to fpt variable
+          fpt = fopen(Filename, "r");
+
+          // Check if fpt is false
+          if (!fpt) {
+                    // Errpor Reading file
+                    printf("Error Reading file");
+                    return 0;
+          }          
+
+          // Go through the entire file
+          while (fgets(buff, 1024, fpt)) {
+                    // Seperate buffered strings
+                    char *field = strtok(buff, ",");
+
+                    // Set valIndex to 0
+                    valIndex = 0;
+
+                    // While field is not NULL
+                    while(field != NULL) {
+
+                              // Switch by valIndex
+                              switch (valIndex) {
+                              case 0: // Case 0 => Date
+                                        strcpy(values[rowCount].Frage, field);
+                                        printf("%s \n", values[rowCount].Frage);
+                                        break;
+                              
+                              case 1: // Case 1 => Time
+                                        strcpy(values[rowCount].Antwort1, field);
+                                        printf("%s \n", values[rowCount].Antwort1);
+                                        break;
+
+                              case 2: // Case 2 => Theme
+                                        strcpy(values[rowCount].Antwort2, field);
+                                        printf("%s \n", values[rowCount].Antwort2);
+                                        break;
+
+                              case 3: // Case 3 => Points
+                                        strcpy(values[rowCount].Antwort3, field);
+                                        printf("%s \n", values[rowCount].Antwort3);
+                                        break;
+
+                              case 4:
+                                        strcpy(values[rowCount].Antwort4, field);
+                                        printf("%s \n", values[rowCount].Antwort4);
+                                        break;
+
+                              case 5:
+                                        strcpy(values[rowCount].Antwort, field);
+                                        printf("%s \n", values[rowCount].Antwort);
+                                        break;
+
+                              default: // Default case => Break
+                                        break;
+                              }
+
+                              // Set Field to Null
+                              field = strtok(NULL, ", ");
+
+                              // Increase valIndex by 1
+                              valIndex++;
+                    }
+                    // Increase rowCount by 1
+                    rowCount++;
+          }
+
+          // close file
+          fclose(fpt);
+
+          // Set rowCount to 0 => Required for multiple function calls
+          rowCount = 0;
+
+          return 0;
+}
 
 // Restsymbole aus dem Eingabespeicher löschen
 void delInput(void)
@@ -104,71 +182,4 @@ int main(void)
 
 	
 	return 0;
-}
-
-
-
-int importFromCSV(char Filename[50]) {
-
-          // Open File in read mode and save to fpt variable
-          fpt = fopen(Filename, "r");
-
-          // Check if fpt is false
-          if (!fpt) {
-                    // Errpor Reading file
-                    printf("Error Reading file");
-                    return 0;
-          }          
-
-          // Go through the entire file
-          while (fgets(buff, 1024, fpt)) {
-                    // Seperate buffered strings
-                    char *field = strtok(buff, ", ");
-                    printf("%s", field);
-
-                    // Set valIndex to 0
-                    valIndex = 0;
-
-                    // While field is not NULL
-                    while(field != NULL) {
-
-                              // Switch by valIndex
-                              switch (valIndex) {
-                              case 0: // Case 0 => Date
-                                        strcpy(values[rowCount].Date, field);
-                                        break;
-                              
-                              case 1: // Case 1 => Time
-                                        strcpy(values[rowCount].Time, field);
-                                        break;
-
-                              case 2: // Case 2 => Theme
-                                        strcpy(values[rowCount].Theme, field);
-                                        break;
-
-                              case 3: // Case 3 => Points
-                                        strcpy(values[rowCount].Points, field);
-                                        break;
-
-                              default: // Default case => Break
-                                        break;
-                              }
-
-                              // Set Field to Null
-                              field = strtok(NULL, ", ");
-
-                              // Increase valIndex by 1
-                              valIndex++;
-                    }
-                    // Increase rowCount by 1
-                    rowCount++;
-          }
-
-          // close file
-          fclose(fpt);
-
-          // Set rowCount to 0 => Required for multiple function calls
-          rowCount = 0;
-
-          return 0;
 }
