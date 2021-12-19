@@ -33,15 +33,15 @@ int gamestand=0;
 int gefundeneBuchstaben=0;
 int test=0;
 //Galgenteile
-char *galgenpart1 = "202";
-char *galgenpart2 = "186";
-char *galgenpart3 = "186";
-char *galgenpart4 = "201";
-char *galgenpart5 = "205";
-char *galgenpart6 = "203";
-char *galgenpart7 = "147";
-char *galgenpart8 = "193";
-char *galgenpart9 = "193";
+int galgenpart1 = 61;
+int galgenpart2 = 124;
+int galgenpart3 = 124;
+int galgenpart4 = 95;
+int galgenpart5 = 95;
+int galgenpart6 = 95;
+int galgenpart7 = 124;
+int galgenpart8 = 124;
+int galgenpart9 = 111;
 
 //Bibiliothek	
 
@@ -140,53 +140,53 @@ while (run <1)
 					switch (hangmanwert) 
 					{
 						case 1:
-							printf("%s \n",galgenpart1);
+							printf("%c \n",galgenpart1);
 							break;
 						case 2:
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;
 						case 3:
-							printf("%s \n",galgenpart3);
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c \n",galgenpart3);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;
 						case 4:
-							printf("%s \n",galgenpart4);
-							printf("%s \n",galgenpart3);
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c \n",galgenpart4);
+							printf("%c \n",galgenpart3);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;
 						case 5:
-							printf("%s%s \n",galgenpart4,galgenpart5);
-							printf("%s \n",galgenpart3);
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c%c \n",galgenpart4,galgenpart5);
+							printf("%c \n",galgenpart3);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;
 						case 6:
-							printf("%s%s%s \n",galgenpart4,galgenpart5,galgenpart6);
-							printf("%s \n",galgenpart3);
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c%c%c \n",galgenpart4,galgenpart5,galgenpart6);
+							printf("%c \n",galgenpart3);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;			
 						case 7:
-							printf("%s%s%s \n",galgenpart4,galgenpart5,galgenpart6);
-							printf("%s %s \n",galgenpart3,galgenpart7);
-							printf("%s \n",galgenpart2);
-							printf("%s \n",galgenpart1);
+							printf("%c%c%c \n",galgenpart4,galgenpart5,galgenpart6);
+							printf("%c %c \n",galgenpart3,galgenpart7);
+							printf("%c \n",galgenpart2);
+							printf("%c \n",galgenpart1);
 							break;
 						case 8:
-							printf("%s%s%s \n",galgenpart4,galgenpart5,galgenpart6);
-							printf("%s %s \n",galgenpart3,galgenpart7);
-							printf("%s %s \n",galgenpart3,galgenpart8);
-							printf("%s \n",galgenpart1);
+							printf("%c%c%c \n",galgenpart4,galgenpart5,galgenpart6);
+							printf("%c %c \n",galgenpart3,galgenpart7);
+							printf("%c %c \n",galgenpart3,galgenpart8);
+							printf("%c \n",galgenpart1);
 							break;
 						case 9:
-							printf("%s%s%s \n",galgenpart4,galgenpart5,galgenpart6);
-							printf("%s %s \n",galgenpart3,galgenpart7);
-							printf("%s %s \n",galgenpart3,galgenpart8);
-							printf("%s %s \n",galgenpart3,galgenpart9);
-							printf("%s \n",galgenpart1);
+							printf("%c%c%c \n",galgenpart4,galgenpart5,galgenpart6);
+							printf("%c %c \n",galgenpart3,galgenpart7);
+							printf("%c %c \n",galgenpart3,galgenpart8);
+							printf("%c %c \n",galgenpart3,galgenpart9);
+							printf("%c \n",galgenpart1);
 							break;	
 					}
 				}
