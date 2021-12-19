@@ -204,12 +204,12 @@ while (run <1)
 		break;
 	
 		case 1:
-			printf("Gameover");
+			printf("Gameover \n");
 			run =1;
 		break;
 	
 		case 2:
-			printf("Gewonnen");
+			printf("Gewonnen \n");
 			run =1;
 		break;
 	}
