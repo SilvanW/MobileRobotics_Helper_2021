@@ -32,6 +32,7 @@ int main()
 		printf("-4- Elektronik\n");
 		printf("-5- Converter\n");
 		printf("-6- Auswertung\n");
+		printf("-7- Exit\n");
 		printf("Bitte gib eine Zahl ein: ");
 		scanf("%i", &Hauptmenu);
 
@@ -258,6 +259,10 @@ int main()
 				// Read data from Optik_1/Auswertung.csv
 				importFromCSV("Optik/Optik_1/Auswertung.csv");
 			break;
+
+			case 7: printf("Exit\n"); // Exit program
+				return 0;
+				break;
 			
 			default: printf("Falscher Wert!");
 			break;
