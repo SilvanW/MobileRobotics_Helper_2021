@@ -22,18 +22,22 @@
 
 // Variabeln Definieren
 int Thema = 0;
+int UserAnswer = 0;
+int PointCounter = 0;
+int PointPercentage = 0;
 
 // Rückgabewerte von scanf Funktion
 int retVal1 = 0;
 
 // Define Dataset Structure
 typedef struct {
-          char Frage[100];
-          char Antwort1[100];
-          char Antwort2[100];
-          char Antwort3[100];
-          char Antwort4[100];
-          char Antwort[100];
+        char Thema[100];
+        char Frage[100];
+        char Antwort1[100];
+        char Antwort2[100];
+        char Antwort3[100];
+        char Antwort4[100];
+        char Antwort[100];
 } Dataset;
 
 // Define Variables
@@ -72,33 +76,31 @@ int importFromCSV(char Filename[50]) {
                               // Switch by valIndex
                               switch (valIndex) {
                               case 0: // Case 0 => Date
-                                        strcpy(values[rowCount].Frage, field);
-                                        printf("%s \n", values[rowCount].Frage);
+                                        strcpy(values[rowCount].Thema, field);
                                         break;
                               
                               case 1: // Case 1 => Time
-                                        strcpy(values[rowCount].Antwort1, field);
-                                        printf("%s \n", values[rowCount].Antwort1);
+                                        strcpy(values[rowCount].Frage, field);
                                         break;
 
                               case 2: // Case 2 => Theme
-                                        strcpy(values[rowCount].Antwort2, field);
-                                        printf("%s \n", values[rowCount].Antwort2);
+                                        strcpy(values[rowCount].Antwort1, field);
                                         break;
 
                               case 3: // Case 3 => Points
-                                        strcpy(values[rowCount].Antwort3, field);
-                                        printf("%s \n", values[rowCount].Antwort3);
+                                        strcpy(values[rowCount].Antwort2, field);
                                         break;
 
                               case 4:
-                                        strcpy(values[rowCount].Antwort4, field);
-                                        printf("%s \n", values[rowCount].Antwort4);
+                                        strcpy(values[rowCount].Antwort3, field);
                                         break;
 
                               case 5:
+                                        strcpy(values[rowCount].Antwort4, field);
+                                        break;
+
+                            case 6:
                                         strcpy(values[rowCount].Antwort, field);
-                                        printf("%s \n", values[rowCount].Antwort);
                                         break;
 
                               default: // Default case => Break
@@ -106,7 +108,7 @@ int importFromCSV(char Filename[50]) {
                               }
 
                               // Set Field to Null
-                              field = strtok(NULL, ", ");
+                              field = strtok(NULL, ",");
 
                               // Increase valIndex by 1
                               valIndex++;
@@ -157,9 +159,39 @@ int main(void)
 	switch (Thema)
 	{
 		case 1:
-		printf("Reflexion und Brechung\n");
-		importFromCSV("Reflexion_Brechung.csv");
-		break;
+		    printf("Reflexion und Brechung\n");
+            importFromCSV("Reflexion_Brechung.csv");
+            for(int Index = 0; Index <= rowCount; Index++)
+            {
+                printf("%s\n", values[Index].Frage);
+                printf("%s\n", values[Index].Antwort1);
+                printf("%s\n", values[Index].Antwort2);
+                printf("%s\n", values[Index].Antwort3);
+                printf("%s\n", values[Index].Antwort4);
+
+                scanf("%i", UserAnswer);
+                //delInput();
+                printf("FGT\n");
+                int CorrectAnswer = atoi(values[Index].Antwort);
+                printf("%i\n", CorrectAnswer);
+                if (CorrectAnswer == UserAnswer)
+                {
+                    printf("Korrekt\n");
+                    PointCounter ++;
+                    printf("%i", PointCounter);
+
+                }
+                else
+                {
+                    printf("Falsch\n");
+                    printf("Die korrekte Antwort ist: %s", values[Index].Antwort);
+                }
+            
+            }
+            
+    
+
+            break;
 	
 		case 2:
 		printf("Bildenstehung, Spiegel und Linsen\n");
