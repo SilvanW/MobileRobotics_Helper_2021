@@ -46,6 +46,18 @@ Dataset values[999];
 // Define File Pointer
 FILE *fpt;
 
+// Restsymbole aus dem Eingabespeicher löschen
+void delInput(void)
+{
+	int c;
+	//Liest alle Zeichen bis zum Schluss aus.
+	while ((c = getchar()) != '\n' && c != EOF)
+	{
+	}
+	
+	return;
+}
+
 int main(void)
 {
 	//Ausgabe der möglichen Auswahl
@@ -112,8 +124,7 @@ int importFromCSV(char Filename[50]) {
           while (fgets(buff, 1024, fpt)) {
                     // Seperate buffered strings
                     char *field = strtok(buff, ", ");
-
-		printf("%s", buff);
+                    printf("%s", field);
 
                     // Set valIndex to 0
                     valIndex = 0;
