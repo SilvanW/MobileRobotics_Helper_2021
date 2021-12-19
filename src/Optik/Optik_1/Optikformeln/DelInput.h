@@ -12,6 +12,6 @@
 #ifndef _FILE_NAME_H_
 #define _FILE_NAME_H_
 
-extern int DelInput(int);
+extern void delInput(void);
 
 #endif

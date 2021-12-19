@@ -3,9 +3,12 @@
  * 
  * Author: Silvan Wiedmer
  * Created: 13.12.2021
+ * Changed: Adrian Rebsamen
+ * Date of Change: 19.12.2021
  * 
  * 13.12.2021 - First Version of the Program
  * 15.12.2021 - Reading & Giving Feedback to user
+ * 19.12.2021 - Reading Questions from a CSV file and importing them in to the Programm
  */
 
 // Include the Required Libraries => Required for FILE
@@ -21,10 +24,10 @@
 
 // Define Dataset Structure
 typedef struct {
-          char Date[50];
-          char Time[50];
-          char Theme[50];
-          char Points[50];
+          char Theme[100];
+          char *Question;
+          char *Answers;
+          char Answer[2];
 } Dataset;
 
 // Define Variables
@@ -54,6 +57,8 @@ int importFromCSV(char Filename[50]) {
                     // Seperate buffered strings
                     char *field = strtok(buff, ", ");
 
+                    printf("%s", field);
+
                     // Set valIndex to 0
                     valIndex = 0;
 
@@ -62,20 +67,20 @@ int importFromCSV(char Filename[50]) {
 
                               // Switch by valIndex
                               switch (valIndex) {
-                              case 0: // Case 0 => Date
-                                        strcpy(values[rowCount].Date, field);
-                                        break;
-                              
-                              case 1: // Case 1 => Time
-                                        strcpy(values[rowCount].Time, field);
-                                        break;
-
-                              case 2: // Case 2 => Theme
+                              case 0: // Case 0 => Theme
                                         strcpy(values[rowCount].Theme, field);
                                         break;
+                              
+                              case 1: // Case 1 => Question
+                                        strcpy(values[rowCount].Question, field);
+                                        break;
 
-                              case 3: // Case 3 => Points
-                                        strcpy(values[rowCount].Points, field);
+                              case 2: // Case 2 => Answers
+                                        strcpy(values[rowCount].Answers, field);
+                                        break;
+
+                              case 3: // Case 3 => Answer
+                                        strcpy(values[rowCount].Answer, field);
                                         break;
 
                               default: // Default case => Break
@@ -95,6 +100,12 @@ int importFromCSV(char Filename[50]) {
           // close file
           fclose(fpt);
 
-return;
+return 0;
 
+}
+
+int main() {
+    importFromCSV("Reflexion_Brechung.csv");
+
+    return 0;
 }
