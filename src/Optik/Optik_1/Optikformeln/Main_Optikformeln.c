@@ -42,15 +42,15 @@ typedef struct {
 
 // Define Variables
 char buff[1024];
-int rowCount = 0;
-int valIndex = 0;
+int reiheZehler = 0;
+int wertIndex = 0;
 Dataset values[999];
 
 // Define File Pointer
 FILE *fpt;
 
 //Funktionsdeklaration
-int importFromCSV(char Filename[50]) {
+int importiereVoCSV(char Filename[50]) {
 
           // Open File in read mode and save to fpt variable
           fpt = fopen(Filename, "r");
@@ -67,40 +67,40 @@ int importFromCSV(char Filename[50]) {
                     // Seperate buffered strings
                     char *field = strtok(buff, ",");
 
-                    // Set valIndex to 0
-                    valIndex = 0;
+                    // Set wertIndex to 0
+                    wertIndex = 0;
 
                     // While field is not NULL
                     while(field != NULL) {
 
-                              // Switch by valIndex
-                              switch (valIndex) {
+                              // Switch by wertIndex
+                              switch (wertIndex) {
                               case 0: // Case 0 => Date
-                                        strcpy(values[rowCount].Thema, field);
+                                        strcpy(values[reiheZehler].Thema, field);
                                         break;
                               
                               case 1: // Case 1 => Time
-                                        strcpy(values[rowCount].Frage, field);
+                                        strcpy(values[reiheZehler].Frage, field);
                                         break;
 
                               case 2: // Case 2 => Theme
-                                        strcpy(values[rowCount].Antwort1, field);
+                                        strcpy(values[reiheZehler].Antwort1, field);
                                         break;
 
                               case 3: // Case 3 => Points
-                                        strcpy(values[rowCount].Antwort2, field);
+                                        strcpy(values[reiheZehler].Antwort2, field);
                                         break;
 
                               case 4:
-                                        strcpy(values[rowCount].Antwort3, field);
+                                        strcpy(values[reiheZehler].Antwort3, field);
                                         break;
 
                               case 5:
-                                        strcpy(values[rowCount].Antwort4, field);
+                                        strcpy(values[reiheZehler].Antwort4, field);
                                         break;
 
                             case 6:
-                                        strcpy(values[rowCount].Antwort, field);
+                                        strcpy(values[reiheZehler].Antwort, field);
                                         break;
 
                               default: // Default case => Break
@@ -110,18 +110,18 @@ int importFromCSV(char Filename[50]) {
                               // Set Field to Null
                               field = strtok(NULL, ",");
 
-                              // Increase valIndex by 1
-                              valIndex++;
+                              // Increase wertIndex by 1
+                              wertIndex++;
                     }
-                    // Increase rowCount by 1
-                    rowCount++;
+                    // Increase reiheZehler by 1
+                    reiheZehler++;
           }
 
           // close file
           fclose(fpt);
-			AnzahlFragen = rowCount;
-          // Set rowCount to 0 => Required for multiple function calls
-          rowCount = 0;
+			AnzahlFragen = reiheZehler;
+          // Set reiheZehler to 0 => Required for multiple function calls
+          reiheZehler = 0;
 
           return 0;
 }
@@ -139,7 +139,7 @@ void delInput(void)
 }
 
 // Define Export To CSV Function
-int exportToCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) {
+int exportiereZuCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) {
 
           // Define File
           FILE *fpt;
@@ -166,7 +166,7 @@ char hour[10];
 char min[10];
 char timeNew[30];
 
-char *getDate() {
+char *holDatum() {
           // Define Time variable
           time_t s;
 
@@ -193,7 +193,7 @@ char *getDate() {
           return dateNew;
 }
 
-char *getTime() {
+char *holZiit() {
           // Define Time variable
           time_t s;
 
@@ -252,7 +252,7 @@ int Main_Optikformeln(void)
 	{
 		case 1:
 		    printf("Reflexion und Brechung\n");
-            importFromCSV("Reflexion_Brechung.csv");
+            importiereVoCSV("Optik/Optik_1/Optikformeln/Reflexion_Brechung.csv");
             PointCounter = 0;
             
             for(int Index = 0; Index < AnzahlFragen; Index++)
@@ -284,13 +284,13 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
 
             break;
 	
 		case 2:
 			printf("Bildenstehung, Spiegel und Linsen\n");
-			importFromCSV("Bildentstehung_Spiegel__Linse.csv");
+			importiereVoCSV("Optik/Optik_1/Optikformeln/Bildentstehung_Spiegel__Linse.csv");
 			PointCounter = 0;
 			
             for(int Index = 0; Index < AnzahlFragen; Index++)
@@ -327,13 +327,13 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
 			
 			break;
 	
 		case 3:
 			printf("Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente\n");
-			importFromCSV("Optische_Instrumente.csv");
+			importiereVoCSV("Optik/Optik_1/Optikformeln/Optische_Instrumente.csv");
 			PointCounter = 0;
 			
             for(int Index = 0; Index < AnzahlFragen; Index++)
@@ -367,13 +367,13 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
 			
 			break;
 	
 		case 4:
 			printf("alle Themen\n");
-			importFromCSV("Alle_Themen.csv");
+			importiereVoCSV("Optik/Optik_1/Optikformeln/Alle_Themen.csv");
 			PointCounter = 0;
 			
             for(int Index = 0; Index < AnzahlFragen; Index++)
@@ -405,7 +405,7 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);
             
-			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
 			
 			break;
 		

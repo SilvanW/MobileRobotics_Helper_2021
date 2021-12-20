@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
+#include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
 
 int main()
 {
@@ -166,13 +167,14 @@ int main()
 				
 						switch(Optik1) // Switch Optik1
 						{
-							case 1: printf("Formeln"); // Case 1 => Formeln
+							case 1: printf("Formeln\n"); // Case 1 => Formeln
+								Main_Optikformeln();
 							break;
-							case 2: printf("Quiz"); // Case 2 => Quiz
+							case 2: printf("Quiz\n"); // Case 2 => Quiz
 							break;
-							case 3: printf("Spiegelsimulation"); // Case 3 => Spiegelsimulation
+							case 3: printf("Spiegelsimulation\n"); // Case 3 => Spiegelsimulation
 							break;
-							default: printf("Falscher Wert!"); // Default Case
+							default: printf("Falscher Wert!\n"); // Default Case
 							break;
 						}
 					break;
