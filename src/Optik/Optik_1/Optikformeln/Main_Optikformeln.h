@@ -8,10 +8,5 @@
  * 0.1 13.12.2021 Erste Version
  */
 
-#ifndef _FILE_NAME_H_
-#define _FILE_NAME_H_
-
 int Main_Optikformeln(void);
-
-#endif
 
