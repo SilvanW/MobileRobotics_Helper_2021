@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
+#include "Elektronik/Elektronik_Quiz/elektronikQuiz.h"
 
 int main()
 {
@@ -212,6 +213,7 @@ int main()
 					switch(Elektronik1) // Swtich Elektronik1
 					{
 						case 1: printf("Elektronik"); // Case 1 => Elektronik
+								elQuiz();
 						break;
 						default: printf("Falscher Wert!"); // Default Case => Falscher Wert
 						break;
