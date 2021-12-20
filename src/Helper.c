@@ -83,7 +83,7 @@ int main()
 							case 2: printf("Quiz \n");
 								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
 								break;
-							case 3: printf("Hangman");
+							case 3: printf("Hangman \n");
 								hangman();
 								break;
 							default: printf("Falscher Wert!");
