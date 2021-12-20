@@ -584,9 +584,9 @@ char quitQuiz(void)
         printf("Wollen Sie weiterfahren? (y/n): ");
         scanf("%s", &yesNo);
         fflush(stdin);
-    } while ((strcmp(&yesNo, "y") != 0) && ((strcmp(&yesNo, "n") != 0)));
+    } while ((strcmp(yesNo, "y") != 0) && ((strcmp(yesNo, "n") != 0)));
 
-    if(strcmp(&yesNo, "y") == 0)
+    if(strcmp(yesNo, "y") == 0)
     {
         return 1;
     }

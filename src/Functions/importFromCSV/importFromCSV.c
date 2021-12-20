@@ -100,7 +100,7 @@ int importFromCSV(char Filename[50]) {
           printf("Thema: %s \n", values[0].Theme);
 
           // Sleep for 1 second
-          sleep(1);
+          //sleep(1);
 
           // Loop through all rows
           for(int i = 0; i < rowCount; i++) {
@@ -119,7 +119,7 @@ int importFromCSV(char Filename[50]) {
                     printf("[%d%%] \n", prozent);
 
                     // Sleep for 1 second
-                    sleep(1);
+                    //sleep(1);
           }
 
           // New Line
