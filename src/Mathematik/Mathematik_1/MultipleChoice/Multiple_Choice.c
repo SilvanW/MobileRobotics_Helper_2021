@@ -78,7 +78,7 @@ void print_list(List *list) {
   temp = list->first;
   while(temp != NULL) {
     printf("%d\t",temp->nummer);
-    printf("%s",temp->frage);
+    printf("%s\n",temp->frage);
     temp = temp->next;
   }
   printf("---------------------------------------------------\n");
@@ -112,7 +112,7 @@ int fragen_laden2(char dateiname[]){
         buffer = strtok(NULL, ";");
 
         // Erklärung auslesen
-        erklaerung_buffer = strtok(NULL, "");
+        erklaerung_buffer = strtok(NULL, "\n");
 
         if(erklaerung_buffer == NULL) {
           break;
@@ -158,8 +158,8 @@ void init_list(void) {
   a = malloc(sizeof(Frage));
   a->nummer = 0;
   a->loesung = 0;
-  strcpy(a->frage,"Testfrage: Delfine haben Beine.\n");
-  strcpy(a->erklaerung,"Testerklärung: Nein sie haben Flossen\n");
+  strcpy(a->frage,"Testfrage: Delfine haben Beine.");
+  strcpy(a->erklaerung,"Testerklärung: Nein sie haben Flossen");
   a->next = NULL;
 
   list.first = a;
@@ -176,7 +176,7 @@ void frage_stellen(List *list) {
 
   // Es werden alle Fragen gestellt bis die Liste am Ende ist.
   while(temp != NULL) {
-    printf("%s",temp->frage);
+    printf("%s\n",temp->frage);
 
     scanf("%s",&antwort_temp);
 
@@ -185,16 +185,16 @@ void frage_stellen(List *list) {
     } else if (strcmp(&antwort_temp, "Falsch") == 0) {
       temp->antwort = 0;
     } else {
-      printf("Bitte gebe Richtig oder Falsch ein!Viel Erfolg bei der nächsten Frage, diese hast du verkackt!");
+      printf("Bitte gebe Richtig oder Falsch ein! Viel Erfolg bei der nächsten Frage, diese hast du verkackt!\n");
     }
 
     if(temp->antwort == temp->loesung) {
-      printf("Das ist richtig!");
+      printf("Das ist richtig!\n");
       punkte++;
     } else {
       printf("Das ist leider Falsch!\t");
-      printf("%s",temp->erklaerung);
-      printf("");
+      printf("%s\n",temp->erklaerung);
+      printf("\n");
       punkte--;
     }
     temp = temp->next;
@@ -202,7 +202,7 @@ void frage_stellen(List *list) {
   if(punkte < 0) {
     punkte = 0;
   }
-  printf("Du hast %d Punkte erzielt", punkte);
+  printf("Du hast %d Punkte erzielt\n", punkte);
 }
 
 //--- MAIN ---------------------------------------------------------------------
