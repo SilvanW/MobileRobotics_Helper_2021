@@ -17,6 +17,7 @@
 #include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
 #include "Mathematik/Mathematik_1/MultipleChoice/Multiple_Choice.h"
 #include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
+#include "Spiele/TicTacToe/TicTacToe.h"
 
 int main()
 {
@@ -29,6 +30,7 @@ int main()
 		int Elektronik, Elektronik1 = 0;
 		int Converter = 0;
 		int Informatik = 0;
+		int Spiele = 0;
 	
 	
 		// Auswahlmenü Hauptmenu
@@ -38,8 +40,9 @@ int main()
 		printf("-4- Elektronik\n");
 		printf("-5- Informatik\n");
 		printf("-6- Converter\n");
-		printf("-7- Auswertung\n");
-		printf("-8- Exit\n");
+		printf("-7- Spiele\n");
+		printf("-8- Auswertung\n");
+		printf("-9- Exit\n");
 		printf("Bitte gib eine Zahl ein: ");
 		scanf("%i", &Hauptmenu);
 
@@ -279,8 +282,27 @@ int main()
 					break;	
 				}
 				break;
+			
+			case 7: printf("Spiele\n");
+				// Auswahl Untermenü Converter
+				printf("\n");
+				printf("-1- TicTacToe\n");
+				printf("Bitte gib eine Zahl ein: ");
+				scanf("%i", &Spiele);
+
+				switch (Spiele)
+				{
+				case 1:
+					TicTacToe();
+					break;
 				
-			case 7: printf("Auswertung\n"); // Case 6 => Auswertung
+				default:
+					break;
+				}
+
+				break;
+
+			case 8: printf("Auswertung\n"); // Case 6 => Auswertung
 
 				// Read data from test.csv
 				importFromCSV("test.csv");
@@ -289,7 +311,7 @@ int main()
 				importFromCSV("Optik/Optik_1/Auswertung.csv");
 			break;
 
-			case 8: printf("Exit\n"); // Exit program
+			case 9: printf("Exit\n"); // Exit program
 				return 0;
 				break;
 			
