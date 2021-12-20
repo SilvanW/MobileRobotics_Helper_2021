@@ -285,7 +285,6 @@ int main()
 			
 			case 7: printf("Spiele\n");
 				// Auswahl Untermenü Converter
-				printf("\n");
 				printf("-1- TicTacToe\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &Spiele);
