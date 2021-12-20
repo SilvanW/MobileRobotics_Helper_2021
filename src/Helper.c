@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
+#include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
 
 int main()
 {
@@ -23,6 +24,7 @@ int main()
 		int Optik, Optik1 = 0;
 		int Elektronik, Elektronik1 = 0;
 		int Converter = 0;
+		int Informatik = 0;
 	
 	
 		// Auswahlmenü Hauptmenu
@@ -30,9 +32,10 @@ int main()
 		printf("-2- Physik\n");
 		printf("-3- Optik\n");
 		printf("-4- Elektronik\n");
-		printf("-5- Converter\n");
-		printf("-6- Auswertung\n");
-		printf("-7- Exit\n");
+		printf("-5- Informatik\n");
+		printf("-6- Converter\n");
+		printf("-7- Auswertung\n");
+		printf("-8- Exit\n");
 		printf("Bitte gib eine Zahl ein: ");
 		scanf("%i", &Hauptmenu);
 
@@ -229,8 +232,28 @@ int main()
 						
 				}
 				break;
+			
+			case 5: printf("Informatik\n");
+
+				// Auswahl Untermenü Informatik
+				printf("-1- Quiz\n");
+				printf("Bitte gib eine Zahl ein: ");
+				scanf("%i", &Informatik);
+
+				printf("\n");
+
+				switch (Informatik)
+				{
+				case 1:
+					inf1_quiz();
+					break;
 				
-			case 5: printf("Converter"); // Case 5 => Converter
+				default:
+					break;
+				}
+				break;
+
+			case 6: printf("Converter"); // Case 5 => Converter
 			
 				// Auswahl Untermenü Converter
 				printf("\n");
@@ -251,7 +274,7 @@ int main()
 				}
 				break;
 				
-			case 6: printf("Auswertung\n"); // Case 6 => Auswertung
+			case 7: printf("Auswertung\n"); // Case 6 => Auswertung
 
 				// Read data from test.csv
 				importFromCSV("test.csv");
@@ -260,7 +283,7 @@ int main()
 				importFromCSV("Optik/Optik_1/Auswertung.csv");
 			break;
 
-			case 7: printf("Exit\n"); // Exit program
+			case 8: printf("Exit\n"); // Exit program
 				return 0;
 				break;
 			
