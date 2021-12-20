@@ -10,9 +10,12 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
 #include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
+#include "Mathematik/Mathematik_1/MultipleChoice/Multiple_Choice.h"
 
 int main()
 {
@@ -74,9 +77,11 @@ int main()
 				
 						switch(Mathematik1) // Switch Mathematik 1
 						{
-							case 1: printf("Linalg");
+							case 1: printf("Linalg \n");
 								break;
-							case 2: printf("Quiz");
+							case 2: printf("Quiz \n");
+								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
+								printf("Multiple Choice");
 								break;
 							case 3: printf("Hangman");
 								hangman();
