@@ -81,7 +81,6 @@ int main()
 								break;
 							case 2: printf("Quiz \n");
 								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
-								printf("Multiple Choice");
 								break;
 							case 3: printf("Hangman");
 								hangman();
