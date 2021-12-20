@@ -1,4 +1,4 @@
-/* zahlenkonverterV0.4.c
+/* zahlenkonverterV0.5.c
 Programm welches Zahlen konvertieren kann
 Autor: Raphael Krause
 Studiengang: Photonics
@@ -142,8 +142,8 @@ void NumberConverter(void)
 			printf("32 bit Wert als Binaer ---------- ");
 			PrintAsBinary64((unsigned long int)KonvInputI32);
 			printf("\n");
-			printf("64 bit Wert als Fliesskommazahl - %.52f\n", KonvInputF64); //Ausgabe in Fliesskommazahl
-			printf("32 bit Wert als Fliesskommazahl - %.23f\n", KonvInputF32); //Ausgabe in Fliesskommazahl
+			printf("64 bit Wert als Fliesskommazahl - %f\n", KonvInputF64); //Ausgabe in Fliesskommazahl , %.52
+			printf("32 bit Wert als Fliesskommazahl - %f\n", KonvInputF32); //Ausgabe in Fliesskommazahl , %.23
 			printf("---------------------------------\n");
 		}
 		else
