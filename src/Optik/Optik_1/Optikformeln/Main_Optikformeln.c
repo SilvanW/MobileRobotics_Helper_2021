@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <time.h>
 
 // Inkludieren der Programmressourcen
 #include "DelInput.h"
@@ -24,7 +25,9 @@
 int Thema = 0;
 int UserAnswer = 0;
 int PointCounter = 0;
-int PointPercentage = 0;
+float PointPercentage = 0;
+int CorrectAnswer = 0;
+int AnzahlFragen = 0;
 
 // Rückgabewerte von scanf Funktion
 int retVal1 = 0;
@@ -33,10 +36,10 @@ int retVal1 = 0;
 typedef struct {
         char Thema[100];
         char Frage[100];
-        char Antwort1[100];
-        char Antwort2[100];
-        char Antwort3[100];
-        char Antwort4[100];
+        char Antwort1[1000];
+        char Antwort2[1000];
+        char Antwort3[1000];
+        char Antwort4[1000];
         char Antwort[100];
 } Dataset;
 
@@ -119,7 +122,7 @@ int importFromCSV(char Filename[50]) {
 
           // close file
           fclose(fpt);
-
+			AnzahlFragen = rowCount;
           // Set rowCount to 0 => Required for multiple function calls
           rowCount = 0;
 
@@ -136,6 +139,98 @@ void delInput(void)
 	}
 	
 	return;
+}
+
+// Define Export To CSV Function
+int exportToCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) {
+
+          // Define File
+          FILE *fpt;
+
+          // Open File in write mode
+          fpt = fopen(Filename, "a");
+
+          // Append Data to File
+          fprintf(fpt,"%s, %s, %s, %d\n", Date, Time, Theme, Points);
+
+          // Close File
+          fclose(fpt);
+
+          return 0;
+}
+
+// Define variables
+char day[10];
+char mon[10];
+char year[10];
+char dateNew[40];
+
+char hour[10];
+char min[10];
+char timeNew[30];
+
+char *getDate() {
+          // Define Time variable
+          time_t s;
+
+          // Define Time struct
+          struct tm* current_time;
+          
+          // Set Time variable to NULL
+          s = time(NULL);
+          
+          // Set Current_Time to localtime from Time variable
+          current_time = localtime(&s);
+
+          // Convert Day / Month / Year values to strings
+          sprintf(day, "%d." ,current_time->tm_mday);
+          sprintf(mon, "%d.",(current_time->tm_mon + 1));
+          sprintf(year, "%d",(current_time->tm_year - 100));
+          
+          // Create date Char
+          strcat(dateNew,day);
+          strcat(dateNew,mon);
+          strcat(dateNew,year);
+
+          // return date
+          return dateNew;
+}
+
+char *getTime() {
+          // Define Time variable
+          time_t s;
+
+          // Define Time struct
+          struct tm* current_time;
+          
+          // Set Time variable to NULL
+          s = time(NULL);
+          
+          // Set Current_Time to localtime from Time variable
+          current_time = localtime(&s);
+
+          // Convert Hour / Minute values to strings
+          sprintf(hour, "%d." ,current_time->tm_hour);
+          sprintf(min, "%d",current_time->tm_min);
+
+          // Check if Hour has one digit
+          if (current_time->tm_hour < 10) {
+                    // Add 0 before value
+                    sprintf(hour, "0%d.", current_time->tm_hour);
+          }
+
+          // Check if Minute has one digit
+          if (current_time->tm_min < 10) {
+                    // Add 0 before value
+                    sprintf(min, "0%d", current_time->tm_min);
+          }
+
+          // Create timeNew Char
+          strcat(timeNew,hour);
+          strcat(timeNew,min);
+
+          // return date
+          return timeNew;
 }
 
 int main(void)
@@ -161,55 +256,165 @@ int main(void)
 		case 1:
 		    printf("Reflexion und Brechung\n");
             importFromCSV("Reflexion_Brechung.csv");
-            for(int Index = 0; Index <= rowCount; Index++)
+            PointCounter = 0;
+            
+            for(int Index = 0; Index < AnzahlFragen; Index++)
             {
                 printf("%s\n", values[Index].Frage);
                 printf("%s\n", values[Index].Antwort1);
                 printf("%s\n", values[Index].Antwort2);
                 printf("%s\n", values[Index].Antwort3);
                 printf("%s\n", values[Index].Antwort4);
-
-                scanf("%i", UserAnswer);
-                //delInput();
-                printf("FGT\n");
-                int CorrectAnswer = atoi(values[Index].Antwort);
-                printf("%i\n", CorrectAnswer);
+                
+                CorrectAnswer = atoi (values[Index].Antwort);
+                
+                scanf("%i", &UserAnswer);
+                delInput();
                 if (CorrectAnswer == UserAnswer)
                 {
                     printf("Korrekt\n");
                     PointCounter ++;
-                    printf("%i", PointCounter);
-
                 }
                 else
                 {
                     printf("Falsch\n");
-                    printf("Die korrekte Antwort ist: %s", values[Index].Antwort);
+                    printf("Die korrekte Antwort ist: %s\n", values[Index].Antwort);
                 }
             
             }
             
-    
+            PointPercentage = (float)PointCounter/AnzahlFragen*100;
+            
+			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
+			
+			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
 
             break;
 	
 		case 2:
-		printf("Bildenstehung, Spiegel und Linsen\n");
-		
-		break;
+			printf("Bildenstehung, Spiegel und Linsen\n");
+			importFromCSV("Bildentstehung_Spiegel__Linse.csv");
+			PointCounter = 0;
+			
+            for(int Index = 0; Index < AnzahlFragen; Index++)
+            {
+                printf("%s\n", values[Index].Frage);
+                printf("%s\n", values[Index].Antwort1);
+                printf("%s\n", values[Index].Antwort2);
+                printf("%s\n", values[Index].Antwort3);
+                printf("%s\n", values[Index].Antwort4);
+                
+                CorrectAnswer = atoi (values[Index].Antwort);
+                
+                scanf("%i", &UserAnswer);
+                delInput();
+                                
+                if (CorrectAnswer == UserAnswer)
+                {
+                    printf("Korrekt\n");
+                    PointCounter ++;
+                }
+                else
+                {
+                    printf("Falsch\n");
+                    printf("Die korrekte Antwort ist: %s\n", values[Index].Antwort);
+                }
+            
+            }
+                                 
+            printf("%i\n", PointCounter);
+			printf("%i\n", AnzahlFragen);
+			
+			            
+            PointPercentage = (float)PointCounter/AnzahlFragen*100;
+            
+			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
+			
+			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			
+			break;
 	
 		case 3:
-		printf("Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente\n");
-		
-		break;
+			printf("Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente\n");
+			importFromCSV("Optische_Instrumente.csv");
+			PointCounter = 0;
+			
+            for(int Index = 0; Index < AnzahlFragen; Index++)
+            {
+                printf("%s\n", values[Index].Frage);
+                printf("%s\n", values[Index].Antwort1);
+                printf("%s\n", values[Index].Antwort2);
+                printf("%s\n", values[Index].Antwort3);
+                printf("%s\n", values[Index].Antwort4);
+                
+                CorrectAnswer = atoi (values[Index].Antwort);
+
+                scanf("%i", &UserAnswer);
+                delInput();
+                
+                
+                if (CorrectAnswer == UserAnswer)
+                {
+                    printf("Korrekt\n");
+                    PointCounter ++;
+                }
+                else
+                {
+                    printf("Falsch\n");
+                    printf("Die korrekte Antwort ist: %s\n", values[Index].Antwort);
+                }
+            
+            }
+            
+            PointPercentage = (float)PointCounter/AnzahlFragen*100;
+            
+			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
+			
+			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			
+			break;
 	
 		case 4:
-		printf("alle Themen\n");
-		
-		break;
+			printf("alle Themen\n");
+			importFromCSV("Alle_Themen.csv");
+			PointCounter = 0;
+			
+            for(int Index = 0; Index < AnzahlFragen; Index++)
+            {
+                printf("%s\n", values[Index].Frage);
+                printf("%s\n", values[Index].Antwort1);
+                printf("%s\n", values[Index].Antwort2);
+                printf("%s\n", values[Index].Antwort3);
+                printf("%s\n", values[Index].Antwort4);
+                
+                CorrectAnswer = atoi (values[Index].Antwort);
+
+                scanf("%i", &UserAnswer);
+                delInput();
+                if (CorrectAnswer == UserAnswer)
+                {
+                    printf("Korrekt\n");
+                    PointCounter ++;
+                }
+                else
+                {
+                    printf("Falsch\n");
+                    printf("Die korrekte Antwort ist: %s\n", values[Index].Antwort);
+                }
+            
+            }
+            
+            PointPercentage = (float)PointCounter/AnzahlFragen*100;
+            
+			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);
+            
+			exportToCSV("Auswertung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
+			
+			break;
 		
 		default:
-		printf("Deine Auswahl ist nicht korrekt.\n");
+			printf("Deine Auswahl ist nicht korrekt.\n");
+			
 	}
 
 	
