@@ -18,9 +18,6 @@
 #include <stdbool.h>
 #include <time.h>
 
-// Inkludieren der Programmressourcen
-#include "DelInput.h"
-
 // Variabeln Definieren
 int Thema = 0;
 int UserAnswer = 0;
@@ -233,7 +230,7 @@ char *getTime() {
           return timeNew;
 }
 
-int main(void)
+int Main_Optikformeln(void)
 {
 	//Ausgabe der möglichen Auswahl
 	printf("-1-\t");
