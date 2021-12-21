@@ -20,6 +20,7 @@
 #include "Spiele/TicTacToe/TicTacToe.h"
 #include "Optik/Optik_1/Quiz/Optik1.h"
 #include "Konverter/Einheiten/Einheiten_Konverter_main.h"
+#include "Optik/Optik_1/Spiegeldarstellung/optik.h"
 
 int main()
 {
@@ -187,6 +188,7 @@ int main()
 								Optik1_Quiz();
 							break;
 							case 3: printf("Spiegelsimulation\n"); // Case 3 => Spiegelsimulation
+								optik();
 							break;
 							default: printf("Falscher Wert!\n"); // Default Case
 							break;
