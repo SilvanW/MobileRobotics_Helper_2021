@@ -21,6 +21,7 @@
 #include "Optik/Optik_1/Quiz/Optik1.h"
 #include "Konverter/Einheiten/Einheiten_Konverter_main.h"
 #include "Optik/Optik_1/Spiegeldarstellung/optik.h"
+#include "Mathematik/Mathematik_1/Trigonometrie/Trigonometrische_Funktionen_Main.h"
 
 int main()
 {
@@ -74,8 +75,9 @@ int main()
 						// Auswahl Untermenü Mathe 1
 						printf("\n");
 						printf("-1- Linalg\n");
-						printf("-2- Quiz\n");
-						printf("-3- Hangman\n");
+						printf("-2- Trigonometrische Funktionen\n");
+						printf("-3- Quiz\n");
+						printf("-4- Hangman\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &Mathematik1);
 
@@ -86,10 +88,13 @@ int main()
 						{
 							case 1: printf("Linalg \n");
 								break;
-							case 2: printf("Quiz \n");
+							case 2: printf("Trigonometrische Funktionen");
+								Trigo();
+								break;
+							case 3: printf("Quiz \n");
 								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
 								break;
-							case 3: printf("Hangman \n");
+							case 4: printf("Hangman \n");
 								hangman();
 								break;
 							default: printf("Falscher Wert!");
