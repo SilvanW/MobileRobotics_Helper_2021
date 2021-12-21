@@ -101,7 +101,14 @@ void optik()
 			if(anzPw == 0) {
 				
 				printf("PC sagt Schuess!!");
+				#ifdef _WIN32
 				system("C:\\WINDOWS\\System32\\shutdown /s");
+				#else
+				printf("Diese Funktion wird nur unter Windows unterstützt.\n");
+				printf("Für das gleiche erlebnis schalten sie nun ihren PC aus.");
+				#endif
+
+				
 			}
 			
 			else if(strcmp(Passwort, "Ich liebe Optik")==0) {
@@ -158,7 +165,13 @@ void optik()
 					break;
 					
 					case 3:
+						#ifdef _WIN32
 						system("explorer https://ricktu288.github.io/ray-optics/simulator/");
+						#else
+						printf("Diese Funktion wird nur unter Windows unterstützt. \n");
+						printf("Für das gleiche erlebnis folgen sie der url: \n");
+						printf("https://ricktu288.github.io/ray-optics/simulator/");
+						#endif
 					break;
 					
 					case 4:
@@ -174,8 +187,14 @@ void optik()
 						printf("-------------------------------------------------------------------------------------------------------\n");
 					break;
 					
-					case 5:
+					case 5:	
+						#ifdef _WIN32
 						system("explorer http://www.ismycomputeron.com/");
+						#else
+						printf("Diese Funktion wird nur unter Windows unterstützt.\n");
+						printf("Für das gleiche erlebnis folgen sie der url:\n");
+						printf("http://www.ismycomputeron.com/");
+						#endif
 					break;
 					
 					case 6:
@@ -289,7 +308,12 @@ void optik()
 			}
 			
 			else if(strcmp(auswahlStr, "hack") == 0) {
+				#ifdef _WIN32
 				system("explorer https://hackertyper.com/");
+				#else
+				printf("Dies funktion wird nur unter Windows unterstützt");
+				#endif
+				
 			}
 			
 			else {
