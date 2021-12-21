@@ -3,6 +3,7 @@
                     "exportcsv.h": "c",
                     "stdio.h": "c",
                     "unistd.h": "c",
-                    "multiple_choice.h": "c"
+                    "multiple_choice.h": "c",
+                    "piehangman.h": "c"
           }
 }

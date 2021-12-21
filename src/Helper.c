@@ -23,6 +23,7 @@
 #include "Optik/Optik_1/Spiegeldarstellung/optik.h"
 #include "Mathematik/Mathematik_1/Trigonometrie/Trigonometrische_Funktionen_Main.h"
 #include "Elektronik/Elektronik_1/elektronikQuiz.h"
+#include "Konverter/Zahlenkonverter/zahlenkonverter.h"
 
 int main()
 {
@@ -283,13 +284,16 @@ int main()
 				printf("-2- Einheiten\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &Converter);
+				
+				fflush(stdin);
 
 				// New Line
 				printf("\n");
 				
 				switch(Converter) // Switch Converter
 				{
-					case 1: printf("Zahlensystem"); // Case 1 => Zahlensystem
+					case 1: printf("Zahlensystem \n"); // Case 1 => Zahlensystem
+						NumberConverter();
 					break;
 					case 2: printf("Einheiten"); // Case 2 => Einheiten
 						Einheiten_Konverter();
