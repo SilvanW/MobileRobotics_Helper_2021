@@ -627,7 +627,7 @@ float auswertung(char punkte, char punktestand)
         printf("I don't want you to be hopeful. I want you to panic.\n - Greta Thunberg\n");
     }
 
-    exportToCSV("Auswertung/elektronikQuiz.csv", getDate() , getTime() , "Elektronikquiz", (int)percent);
+    exportToCSV("Auswertung/Elektronik_1/elektronikQuiz.csv", getDate() , getTime() , "Elektronikquiz", (int)percent);
 
     return percent;
 }

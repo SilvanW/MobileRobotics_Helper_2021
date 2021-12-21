@@ -317,8 +317,14 @@ int main()
 
 			case 8: printf("Auswertung\n"); // Case 6 => Auswertung
 
-				// Read data from test.csv
-				importFromCSV("Auswertung/elektronikQuiz.csv");
+				printf("Elektronik_1\n");
+				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
+
+				printf("Optik_1\n");
+				importFromCSV("Auswertung/Optik_1/Bildentstehung_Spiegel_Linsen.csv");
+				importFromCSV("Auswertung/Optik_1/Mehrlinsen_Mehrspiegelsysteme_optische_Instrumente.csv");
+				importFromCSV("Auswertung/Optik_1/Reflexion_Brechung.csv");
+				importFromCSV("Auswertung/Optik_1/optikOverall.csv");
 			break;
 
 			case 9: printf("Exit\n"); // Exit program

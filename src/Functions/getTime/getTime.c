@@ -24,6 +24,10 @@ char min[10];
 char timeNew[30];
 
 char *getDate() {
+
+          // set dateNew to ""
+          strcpy(dateNew,"");
+
           // Define Time variable
           time_t s;
 
@@ -51,6 +55,10 @@ char *getDate() {
 }
 
 char *getTime() {
+
+          // set timeNew to ""
+          strcpy(timeNew,"");
+
           // Define Time variable
           time_t s;
 

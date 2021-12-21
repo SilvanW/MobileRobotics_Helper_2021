@@ -53,7 +53,7 @@ int importFromCSV(char Filename[50]) {
           // Go through the entire file
           while (fgets(buff, 1024, fpt)) {
                     // Seperate buffered strings
-                    char *field = strtok(buff, ", ");
+                    char *field = strtok(buff, ",");
 
                     // Set valIndex to 0
                     valIndex = 0;
@@ -84,7 +84,7 @@ int importFromCSV(char Filename[50]) {
                               }
 
                               // Set Field to Null
-                              field = strtok(NULL, ", ");
+                              field = strtok(NULL, ",");
 
                               // Increase valIndex by 1
                               valIndex++;

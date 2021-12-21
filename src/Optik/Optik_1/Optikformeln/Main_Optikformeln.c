@@ -17,6 +17,8 @@
 #include <string.h>
 #include <stdbool.h>
 #include <time.h>
+#include "../../../Functions/getTime/getTime.h"
+#include "../../../Functions/exportToCSV/exportToCSV.h"
 
 // Variabeln Definieren
 int Thema = 0;
@@ -138,24 +140,6 @@ void delInput(void)
 	return;
 }
 
-// Define Export To CSV Function
-int exportiereZuCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) {
-
-          // Define File
-          FILE *fpt;
-
-          // Open File in write mode
-          fpt = fopen(Filename, "a");
-
-          // Append Data to File
-          fprintf(fpt,"%s, %s, %s, %d\n", Date, Time, Theme, Points);
-
-          // Close File
-          fclose(fpt);
-
-          return 0;
-}
-
 // Define variables
 char day[10];
 char mon[10];
@@ -165,70 +149,6 @@ char dateNew[40];
 char hour[10];
 char min[10];
 char timeNew[30];
-
-char *holDatum() {
-          // Define Time variable
-          time_t s;
-
-          // Define Time struct
-          struct tm* current_time;
-          
-          // Set Time variable to NULL
-          s = time(NULL);
-          
-          // Set Current_Time to localtime from Time variable
-          current_time = localtime(&s);
-
-          // Convert Day / Month / Year values to strings
-          sprintf(day, "%d." ,current_time->tm_mday);
-          sprintf(mon, "%d.",(current_time->tm_mon + 1));
-          sprintf(year, "%d",(current_time->tm_year - 100));
-          
-          // Create date Char
-          strcat(dateNew,day);
-          strcat(dateNew,mon);
-          strcat(dateNew,year);
-
-          // return date
-          return dateNew;
-}
-
-char *holZiit() {
-          // Define Time variable
-          time_t s;
-
-          // Define Time struct
-          struct tm* current_time;
-          
-          // Set Time variable to NULL
-          s = time(NULL);
-          
-          // Set Current_Time to localtime from Time variable
-          current_time = localtime(&s);
-
-          // Convert Hour / Minute values to strings
-          sprintf(hour, "%d." ,current_time->tm_hour);
-          sprintf(min, "%d",current_time->tm_min);
-
-          // Check if Hour has one digit
-          if (current_time->tm_hour < 10) {
-                    // Add 0 before value
-                    sprintf(hour, "0%d.", current_time->tm_hour);
-          }
-
-          // Check if Minute has one digit
-          if (current_time->tm_min < 10) {
-                    // Add 0 before value
-                    sprintf(min, "0%d", current_time->tm_min);
-          }
-
-          // Create timeNew Char
-          strcat(timeNew,hour);
-          strcat(timeNew,min);
-
-          // return date
-          return timeNew;
-}
 
 int Main_Optikformeln(void)
 {
@@ -284,7 +204,7 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
+			exportToCSV("Auswertung/Optik_1/Reflexion_Brechung.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
 
             break;
 	
@@ -327,12 +247,12 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
+			exportToCSV("Auswertung/Optik_1/Bildentstehung_Spiegel_Linsen.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
 			
 			break;
 	
 		case 3:
-			printf("Mehlrinsen- und Mehrspiegelsysteme und optische Instrumente\n");
+			printf("Mehrlinsen- und Mehrspiegelsysteme und optische Instrumente\n");
 			importiereVoCSV("Optik/Optik_1/Optikformeln/Optische_Instrumente.csv");
 			PointCounter = 0;
 			
@@ -367,7 +287,7 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);            
 			
-			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
+			exportToCSV("Auswertung/Optik_1/Mehrlinsen_Mehrspiegelsysteme_optische_Instrumente.csv", getDate(), getTime(), values[0].Thema, PointPercentage);
 			
 			break;
 	
@@ -405,7 +325,7 @@ int Main_Optikformeln(void)
             
 			printf("Du hast %.0f%% der Punkte Erreicht\n", PointPercentage);
             
-			exportiereZuCSV("Auswertung.csv", holDatum(), holZiit(), values[0].Thema, PointPercentage);
+			exportToCSV("Auswertung/Optik_1/optikOverall.csv", getDate(), getTime(), "Overall", PointPercentage);
 			
 			break;
 		
