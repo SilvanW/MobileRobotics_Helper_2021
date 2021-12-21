@@ -9,4 +9,4 @@ Datum: 17.12.2021
 */
 
 //Definieren der Funktionen
-void optik();
+void Spiegelsimulation();
