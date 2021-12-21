@@ -283,6 +283,8 @@ int main()
 				printf("-2- Einheiten\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &Converter);
+				
+				fflush(stdin);
 
 				// New Line
 				printf("\n");
