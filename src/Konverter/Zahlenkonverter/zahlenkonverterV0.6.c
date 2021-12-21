@@ -1,4 +1,4 @@
-/* zahlenkonverterV0.5.c
+/* zahlenkonverterV0.4.c
 Programm welches Zahlen konvertieren kann
 Autor: Raphael Krause
 Studiengang: Photonics
@@ -13,6 +13,7 @@ V0.4 Verpacken des Binär-Outputs in 'PrintAsBinary64()'
 	 Fliesskommazahl Ein- und Ausgabe
 	 Enum 'ConverterTypes' hinzugefügt
 V0.5 Hinzufügen der Option "Andere..."
+V0.6 Hinzufügen der Ausgabe von unsigned Ganzzahlen
 */
 
 // Einbinden von Headerdateien der Programmbibliothek.
@@ -131,20 +132,22 @@ void NumberConverter(void)
 		if(*endptr == 0 && errno != ERANGE) //Überprüfen mit letztem Zeichen (bei String: 0)
 		{
 			//Ausgabe der konvertierten Eingabezahl
-			printf("---------------------------------\n");
-			printf("64 bit Wert als Ganzzahl -------- %lld\n", KonvInputI64); //Ausgabe in Ganzzahl
-			printf("32 bit Wert als Ganzzahl -------- %ld\n", KonvInputI32); //Ausgabe in Ganzzahl
-			printf("64 bit Wert als Hexadezimal ----- 0x%llx\n", KonvInputI64); //Ausgabe in hex
-			printf("32 bit Wert als Hexadezimal ----- 0x%lx\n", KonvInputI32); //Ausgabe in hex
-			printf("64 bit Wert als Binaer ---------- ");
+			printf("-----------------------------------\n");
+			printf("64 bit Wert als unsigned Ganzzahl : %llu\n", KonvInputI64); //Ausgabe in Ganzzahl
+			printf("32 bit Wert als unsigned Ganzzahl : %lu\n", KonvInputI32); //Ausgabe in Ganzzahl
+			printf("64 bit Wert als signed Ganzzahl   : %lld\n", KonvInputI64); //Ausgabe in Ganzzahl
+			printf("32 bit Wert als signed Ganzzahl   : %ld\n", KonvInputI32); //Ausgabe in Ganzzahl
+			printf("64 bit Wert als Hexadezimal       : 0x%llx\n", KonvInputI64); //Ausgabe in hex
+			printf("32 bit Wert als Hexadezimal       : 0x%lx\n", KonvInputI32); //Ausgabe in hex
+			printf("64 bit Wert als Binaer            : ");
 			PrintAsBinary64(KonvInputI64);
 			printf("\n");
-			printf("32 bit Wert als Binaer ---------- ");
+			printf("32 bit Wert als Binaer            : ");
 			PrintAsBinary64((unsigned long int)KonvInputI32);
 			printf("\n");
-			printf("64 bit Wert als Fliesskommazahl - %f\n", KonvInputF64); //Ausgabe in Fliesskommazahl , %.52
-			printf("32 bit Wert als Fliesskommazahl - %f\n", KonvInputF32); //Ausgabe in Fliesskommazahl , %.23
-			printf("---------------------------------\n");
+			printf("64 bit Wert als Fliesskommazahl   : %.52f\n", KonvInputF64); //Ausgabe in Fliesskommazahl
+			printf("32 bit Wert als Fliesskommazahl   : %.23f\n", KonvInputF32); //Ausgabe in Fliesskommazahl
+			printf("-----------------------------------\n");
 		}
 		else
 		{
@@ -155,6 +158,7 @@ void NumberConverter(void)
 	}
 	return;
 }
+
 
 //////////////////////////////////////
 // Private Function Implementations //
@@ -202,6 +206,7 @@ static void PrintAsBinary64(long long int zahl)
  */
 static void GetStringFromUser(char *str, size_t size)
 {
+	fflush(stdin);		// just in case, flushe stdin
 	if(!str || !size) return;	// str oder size dürfen nicht 0 sein
 	char c = 0;			// das aktuelle Zeichen welches gelesen wird
 	size_t read = 0;	// wie viele Zeichen bereits gelesen wurden
@@ -222,7 +227,7 @@ static void GetStringFromUser(char *str, size_t size)
 		read--;			// verkürze die Länge
 	}
 	str[read] = '\0';	// zum Schluss wird der String mit einem Terminator beendet
-	// fflush(stdin);		// just in case, flushe stdin
+	fflush(stdin);		// just in case, flushe stdin
 }
 
 
