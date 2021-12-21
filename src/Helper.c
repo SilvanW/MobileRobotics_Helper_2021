@@ -22,6 +22,7 @@
 #include "Konverter/Einheiten/Einheiten_Konverter_main.h"
 #include "Optik/Optik_1/Spiegeldarstellung/optik.h"
 #include "Mathematik/Mathematik_1/Trigonometrie/Trigonometrische_Funktionen_Main.h"
+#include "Elektronik/Elektronik_1/elektronikQuiz.h"
 
 int main()
 {
@@ -226,7 +227,7 @@ int main()
 						
 						// Auswahl Untermenü Elektronik 1
 						printf("\n");
-						printf("-1- Elektronik\n");
+						printf("-1- Quiz\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &Elektronik1);
 
@@ -235,7 +236,8 @@ int main()
 				
 						switch(Elektronik1) // Swtich Elektronik1
 						{
-							case 1: printf("Elektronik"); // Case 1 => Elektronik
+							case 1: printf("Quiz"); // Case 1 => Elektronik
+								elQuiz();
 							break;
 							default: printf("Falscher Wert!"); // Default Case => Falscher Wert
 							break;

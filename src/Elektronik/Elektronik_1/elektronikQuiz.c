@@ -625,7 +625,7 @@ float auswertung(char punkte, char punktestand)
         printf("I don't want you to be hopeful. I want you to panic.\n - Greta Thunberg\n");
     }
 
-    exportToCSV("Results.csv", "20.12.21", "16:00", "Elektronikquiz", (int)percent);
+    exportiereZuCSVFile("Results.csv", "20.12.21", "16:00", "Elektronikquiz", (int)percent);
 
     return percent;
 }
@@ -640,7 +640,7 @@ float auswertung(char punkte, char punktestand)
  * Theme:       Gebiet des Resultates
  * Points:      Erzieltes Resultat
  */
-int exportToCSV(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) 
+int exportiereZuCSVFile(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) 
 {
           // Define File
           FILE *fpt;

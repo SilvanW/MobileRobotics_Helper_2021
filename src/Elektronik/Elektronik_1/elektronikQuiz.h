@@ -42,6 +42,6 @@ char elQuiz(void);
 char quitQuiz(void);
 float auswertung(char, char);
 
-int exportToCSV(char[50], char[50], char[50], char[50], int);
+int exportiereZuCSVFile(char[50], char[50], char[50], char[50], int);
 
 #endif /* ELEKTRONIKQUIZ_H_ */
