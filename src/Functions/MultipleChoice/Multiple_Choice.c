@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "../exportToCSV/exportToCSV.h"
+#include "../getTime/getTime.h"
 
 #define MAXCHAR 200 // Maximale Zeichen pro Frage oder Antwort
 #define MAXROW 500  // Maximale Zeichen die pro Zeile eingelesen werden
@@ -166,7 +168,7 @@ void init_list(void) {
 }
 
 // Frage stellen
-void frage_stellen(List *list) {
+void frage_stellen(List *list, char path [], char Theme []) {
   Frage *temp;
   char *antwort_temp;
   int punkte = 0;
@@ -203,16 +205,18 @@ void frage_stellen(List *list) {
     punkte = 0;
   }
   printf("Du hast %d Punkte erzielt\n", punkte);
+  exportToCSV(path,getDate(),getTime(),Theme,(int)((float)punkte/6*100));
+
 }
 
 //--- MAIN ---------------------------------------------------------------------
-int multiple_choice(char dateiname []) {
+int multiple_choice(char dateiname [], char exportName [], char Theme []) {
   init_list();
 
   fragen_laden2(dateiname);
 
   print_list(&list);
 
-  frage_stellen(&list);
+  frage_stellen(&list, exportName, Theme);
 }
 //--- MAIN Ende ----------------------------------------------------------------

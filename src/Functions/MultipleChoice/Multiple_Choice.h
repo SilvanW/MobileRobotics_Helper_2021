@@ -27,7 +27,7 @@ void print_list(List *list);
 int fragen_laden2(char dateiname[]);
 void init_list(void);
 void frage_stellen(List *list);
-int multiple_choice(char dateiname []);
+int multiple_choice(char dateiname [], char exportName [], char Theme []);
 //--- Funktionsprototypen Ende -------------------------------------------------
 
 

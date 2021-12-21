@@ -15,7 +15,7 @@
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
 #include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
-#include "Mathematik/Mathematik_1/MultipleChoice/Multiple_Choice.h"
+#include "Functions/MultipleChoice/Multiple_Choice.h"
 #include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
 #include "Spiele/TicTacToe/TicTacToe.h"
 #include "Optik/Optik_1/Quiz/Optik1.h"
@@ -93,7 +93,7 @@ int main()
 								Trigo();
 								break;
 							case 3: printf("Quiz \n");
-								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
+								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","Mathematik_1");
 								break;
 							case 4: printf("Hangman \n");
 								hangman();
@@ -141,7 +141,7 @@ int main()
 						switch(Physik1) // Switch Physik 1
 						{
 							case 1: printf("Quiz");
-								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
+								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "Physik_1");
 							break;
 							default: printf("Falscher Wert!");
 							break;
@@ -317,14 +317,24 @@ int main()
 
 			case 8: printf("Auswertung\n"); // Case 6 => Auswertung
 
-				printf("Elektronik_1\n");
-				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
+				// Auswertung Mathematik
+				printf("Mathematik_1\n");
+				importFromCSV("Auswertung/Mathematik_1/MultipleChoice.csv");
 
+				// Auswertung Physik
+				printf("Physik_1\n");
+				importFromCSV("Auswertung/Physik_1/MultipleChoice.csv");
+
+				// Auswertung Optik
 				printf("Optik_1\n");
 				importFromCSV("Auswertung/Optik_1/Bildentstehung_Spiegel_Linsen.csv");
 				importFromCSV("Auswertung/Optik_1/Mehrlinsen_Mehrspiegelsysteme_optische_Instrumente.csv");
 				importFromCSV("Auswertung/Optik_1/Reflexion_Brechung.csv");
 				importFromCSV("Auswertung/Optik_1/optikOverall.csv");
+
+				// Auswertung Elektronik
+				printf("Elektronik_1\n");
+				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
 			break;
 
 			case 9: printf("Exit\n"); // Exit program

@@ -9,5 +9,5 @@
 
 
 int main (void) {
-  multiple_choice("test.csv");
+  multiple_choice("test.csv", "Auswertung.csv");
 }
