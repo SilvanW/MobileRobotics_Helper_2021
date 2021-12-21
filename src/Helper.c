@@ -18,6 +18,7 @@
 #include "Mathematik/Mathematik_1/MultipleChoice/Multiple_Choice.h"
 #include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
 #include "Spiele/TicTacToe/TicTacToe.h"
+#include "Optik/Optik_1/Quiz/Optik1.h"
 
 int main()
 {
@@ -182,6 +183,7 @@ int main()
 								Main_Optikformeln();
 							break;
 							case 2: printf("Quiz\n"); // Case 2 => Quiz
+								Optik1_Quiz();
 							break;
 							case 3: printf("Spiegelsimulation\n"); // Case 3 => Spiegelsimulation
 							break;
