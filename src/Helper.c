@@ -56,10 +56,9 @@ int main()
 		// switch case
 		switch(Hauptmenu)
 		{
-			case 1: printf("Mathematik"); // Case 1 => Mathematik
+			case 1: printf("Mathematik\n"); // Case 1 => Mathematik
 				
 				// Auswahl Untermenü Mathe
-				printf("\n");
 				printf("-1- Mathematik 1\n");
 				printf("-2- Mathematik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
