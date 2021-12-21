@@ -26,7 +26,6 @@
 #include "Elektronik/Elektronik_1/elektronikQuiz.h"
 #include "Konverter/Zahlenkonverter/zahlenkonverter.h"
 
-
 // Variablen
 Hauptmenu hauptmenu = 0;
 
@@ -60,7 +59,6 @@ Converter converter = 0;
 
 // Spiele
 Spiele spiele = 0;
-
 
 int main()
 {
@@ -156,7 +154,7 @@ int main()
 				
 				switch(physik) // Swtich Physik
 				{
-					case PHYSIK_1: printf("Physik 1"); // Case 1 => Physik 1
+					case PHYSIK_1: printf("Physik 1");
 						
 						// Auswahl Untermenü Physik 1
 						printf("\n");
@@ -177,7 +175,7 @@ int main()
 						}
 					break;
 					
-					case PHYSIK_2: printf("Physik 2"); // Case 2 => Physik 2
+					case PHYSIK_2: printf("Physik 2");
 						
 						// Auswahl Untermenü Physik 2
 						printf("\n");
@@ -187,7 +185,7 @@ int main()
 				}
 				break;
 				
-			case OPTIK: printf("Optik"); // Case 3 => Optik
+			case OPTIK: printf("Optik");
 				
 				// Auswahl Untermenü Optik
 				printf("\n");
@@ -201,7 +199,7 @@ int main()
 				
 				switch(optik) // Switch Optik
 				{
-					case OPTIK_1: printf("Optik 1"); // Case 1 => Optik 1
+					case OPTIK_1: printf("Optik 1");
 						
 						// Auswahl Untermenü Optik 1
 						printf("\n");
@@ -216,13 +214,13 @@ int main()
 				
 						switch(optik_1) // Switch Optik1
 						{
-							case FORMELN: printf("Formeln\n"); // Case 1 => Formeln
+							case FORMELN: printf("Formeln\n");
 								Main_Optikformeln();
 							break;
-							case OPTIK_1_QUIZ: printf("Quiz\n"); // Case 2 => Quiz
+							case OPTIK_1_QUIZ: printf("Quiz\n");
 								Optik1_Quiz();
 							break;
-							case SPIEGELSIMULATION: printf("Spiegelsimulation\n"); // Case 3 => Spiegelsimulation
+							case SPIEGELSIMULATION: printf("Spiegelsimulation\n");
 								Spiegelsimulation();
 							break;
 							default: printf("Falscher Wert!\n"); // Default Case
@@ -230,7 +228,7 @@ int main()
 						}
 					break;
 					
-					case OPTIK_2: printf("Optik 2"); // Case 2 => Optik 2
+					case OPTIK_2: printf("Optik 2");
 						
 						// Auswahl Untermenü Optik 2
 						printf("\n");
@@ -253,7 +251,7 @@ int main()
 				
 				switch(elektronik) // Switch Elektronik
 				{
-					case ELEKTRONIK_1: printf("Elektronik 1"); // Case 1 => Elektronik 1
+					case ELEKTRONIK_1: printf("Elektronik 1");
 						
 						// Auswahl Untermenü Elektronik 1
 						printf("\n");
@@ -266,7 +264,7 @@ int main()
 				
 						switch(elektronik_1) // Swtich Elektronik1
 						{
-							case ELEKTRONIK_1_QUIZ: printf("Quiz"); // Case 1 => Elektronik
+							case ELEKTRONIK_1_QUIZ: printf("Quiz");
 								elQuiz();
 							break;
 							default: printf("Falscher Wert!"); // Default Case => Falscher Wert
@@ -274,7 +272,7 @@ int main()
 						}
 					break;
 					
-					case ELEKTRONIK_2: printf("Elektronik 2"); // Case 2 => Elektronik 2
+					case ELEKTRONIK_2: printf("Elektronik 2");
 						
 						// Auswahl Untermenü Elektronik 2
 						printf("\n");
@@ -323,7 +321,7 @@ int main()
 				}
 				break;
 
-			case CONVERTER: printf("Converter"); // Case 5 => Converter
+			case CONVERTER: printf("Converter");
 			
 				// Auswahl Untermenü Converter
 				printf("\n");
@@ -337,10 +335,10 @@ int main()
 				
 				switch(converter) // Switch Converter
 				{
-					case ZAHLENSYSTEM: printf("Zahlensystem \n"); // Case 1 => Zahlensystem
+					case ZAHLENSYSTEM: printf("Zahlensystem \n");
 						NumberConverter();
 					break;
-					case EINHEITEN: printf("Einheiten"); // Case 2 => Einheiten
+					case EINHEITEN: printf("Einheiten");
 						Einheiten_Konverter();
 					break;	
 				}
@@ -364,7 +362,7 @@ int main()
 
 				break;
 
-			case AUSWERTUNG: printf("Auswertung\n"); // Case 6 => Auswertung
+			case AUSWERTUNG: printf("Auswertung\n");
 
 				// Auswertung Mathematik
 				printf("Mathematik_1\n");
@@ -386,7 +384,7 @@ int main()
 				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
 			break;
 
-			case EXIT: printf("Exit\n"); // Exit program
+			case EXIT: printf("Exit\n");
 				return 0;
 				break;
 			
