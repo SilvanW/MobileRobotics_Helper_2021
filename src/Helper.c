@@ -24,6 +24,7 @@
 #include "Mathematik/Mathematik_1/Trigonometrie/Trigonometrische_Funktionen_Main.h"
 #include "Elektronik/Elektronik_1/elektronikQuiz.h"
 #include "Konverter/Zahlenkonverter/zahlenkonverter.h"
+#include "Mathematik/Mathematik_1/Linalg/lin_alg.h"
 
 int main()
 {
@@ -88,7 +89,7 @@ int main()
 						switch(Mathematik1) // Switch Mathematik 1
 						{
 							case 1: printf("Linalg \n");
-								printf("Linalg wo?\n");
+								linAlg();
 								break;
 							case 2: printf("Trigonometrische Funktionen\n");
 								Trigo();
