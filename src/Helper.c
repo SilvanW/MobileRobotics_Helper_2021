@@ -88,7 +88,7 @@ int main()
 						{
 							case 1: printf("Linalg \n");
 								break;
-							case 2: printf("Trigonometrische Funktionen");
+							case 2: printf("Trigonometrische Funktionen\n");
 								Trigo();
 								break;
 							case 3: printf("Quiz \n");
