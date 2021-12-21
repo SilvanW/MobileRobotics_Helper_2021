@@ -25,6 +25,7 @@
 #include "Elektronik/Elektronik_1/elektronikQuiz.h"
 #include "Konverter/Zahlenkonverter/zahlenkonverter.h"
 #include "Mathematik/Mathematik_1/Linalg/lin_alg.h"
+#include "Spiele/Lost_Found/lostfound.h"
 
 int main()
 {
@@ -303,6 +304,7 @@ int main()
 			case 7: printf("Spiele\n");
 				// Auswahl Untermenü Converter
 				printf("-1- TicTacToe\n");
+                printf("-2- Lost&Found\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &Spiele);
 
@@ -312,6 +314,11 @@ int main()
 					TicTacToe();
 					break;
 				
+                case 2:
+                    fflush(stdin);
+                    lostfound();
+                    break;
+
 				default:
 					break;
 				}
