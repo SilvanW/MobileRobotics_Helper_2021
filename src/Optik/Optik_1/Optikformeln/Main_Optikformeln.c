@@ -210,7 +210,7 @@ int Main_Optikformeln(void)
 	
 		case 2:
 			printf("Bildenstehung, Spiegel und Linsen\n");
-			importiereVoCSV("Optik/Optik_1/Optikformeln/Bildentstehung_Spiegel__Linse.csv");
+			importiereVoCSV("Optik/Optik_1/Optikformeln/Bildentstehung_Spiegel_Linse.csv");
 			PointCounter = 0;
 			
             for(int Index = 0; Index < AnzahlFragen; Index++)
@@ -253,7 +253,7 @@ int Main_Optikformeln(void)
 	
 		case 3:
 			printf("Mehrlinsen- und Mehrspiegelsysteme und optische Instrumente\n");
-			importiereVoCSV("Optik/Optik_1/Optikformeln/Optische_Instrumente.csv");
+			importiereVoCSV("Optik/Optik_1/Optikformeln/Optische_instrumente.csv");
 			PointCounter = 0;
 			
             for(int Index = 0; Index < AnzahlFragen; Index++)
