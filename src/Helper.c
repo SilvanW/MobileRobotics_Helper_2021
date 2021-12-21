@@ -290,8 +290,7 @@ int main()
 				switch(Converter) // Switch Converter
 				{
 					case 1: printf("Zahlensystem \n"); // Case 1 => Zahlensystem
-					NumberConverter();
-					printf("Done");
+						NumberConverter();
 					break;
 					case 2: printf("Einheiten"); // Case 2 => Einheiten
 						Einheiten_Konverter();
