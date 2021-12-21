@@ -18,14 +18,6 @@
 #include "temperatur_converter.h"
 #include "weight_converter.h"
 
-void Einheiten_Konverter(void);
-
-int main(void)
-{
-	Einheiten_Konverter();
-	return 0;
-}
-
 void Einheiten_Konverter(void)
 { 
 	int auswahl1,auswahl2;

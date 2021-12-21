@@ -19,6 +19,7 @@
 #include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
 #include "Spiele/TicTacToe/TicTacToe.h"
 #include "Optik/Optik_1/Quiz/Optik1.h"
+#include "Konverter/Einheiten/Einheiten_Konverter_main.h"
 
 int main()
 {
@@ -282,6 +283,7 @@ int main()
 					case 1: printf("Zahlensystem"); // Case 1 => Zahlensystem
 					break;
 					case 2: printf("Einheiten"); // Case 2 => Einheiten
+						Einheiten_Konverter();
 					break;	
 				}
 				break;
