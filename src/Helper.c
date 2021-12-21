@@ -132,6 +132,7 @@ int main()
 						switch(Physik1) // Switch Physik 1
 						{
 							case 1: printf("Quiz");
+								multiple_choice("Mathematik/Mathematik_1/MultipleChoice/test.csv");
 							break;
 							default: printf("Falscher Wert!");
 							break;
