@@ -31,7 +31,7 @@ Datum: 06.12.2021
 
 
 //Funktionen
-void optik()
+void Spiegelsimulation()
 {
 	//Variablen Menueauswahl
 	char auswahlStr[20] = {};

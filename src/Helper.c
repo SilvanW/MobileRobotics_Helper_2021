@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "Helper.h"
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
 #include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
@@ -27,18 +28,43 @@
 #include "Mathematik/Mathematik_1/Linalg/lin_alg.h"
 #include "Spiele/Lost_Found/lostfound.h"
 
+// Variablen
+Hauptmenu hauptmenu = 0;
+
+// Mathematik
+Mathematik mathematik = 0;
+Mathematik_1 mathematik_1 = 0;
+Mathematik_2 mathematik_2 = 0;
+
+// Physik
+Physik physik = 0;
+Physik_1 physik_1 = 0;
+Physik_2 physik_2 = 0;
+
+// Optik
+Optik optik = 0;
+Optik_1 optik_1 = 0;
+Optik_2 optik_2 = 0;
+
+// Elektronik
+Elektronik elektronik = 0;
+Elektronik_1 elektronik_1 = 0;
+Elektronik_2 elektronik_2 = 0;
+
+// Informatik
+Informatik informatik = 0;
+Informatik_1 informatik_1 = 0;
+Informatik_2 informatik_2 = 0;
+
+// Converter
+Converter converter = 0;
+
+// Spiele
+Spiele spiele = 0;
+
 int main()
 {
 	while (1) {
-		// Variablen
-		int Hauptmenu = 0;
-		int Mathematik, Mathematik1 = 0;
-		int Physik, Physik1 = 0;
-		int Optik, Optik1 = 0;
-		int Elektronik, Elektronik1 = 0;
-		int Converter = 0;
-		int Informatik = 0;
-		int Spiele = 0;
 	
 	
 		// Auswahlmenü Hauptmenu
@@ -52,28 +78,28 @@ int main()
 		printf("-8- Auswertung\n");
 		printf("-9- Exit\n");
 		printf("Bitte gib eine Zahl ein: ");
-		scanf("%i", &Hauptmenu);
+		scanf("%i", &hauptmenu);
 
 		// New Line
 		printf("\n");	
 	
 		// switch case
-		switch(Hauptmenu)
+		switch(hauptmenu)
 		{
-			case 1: printf("Mathematik\n"); // Case 1 => Mathematik
+			case MATHEMATIK: printf("Mathematik\n"); // Case 1 => Mathematik
 				
 				// Auswahl Untermenü Mathe
 				printf("-1- Mathematik 1\n");
 				printf("-2- Mathematik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Mathematik);
+				scanf("%i", &mathematik);
 
 				// New Line
 				printf("\n");
 				
-				switch(Mathematik) // Swtich Mathematik
+				switch(mathematik) // Swtich Mathematik
 				{
-					case 1: printf("Mathematik 1"); // Case 1 => Mathematik 1
+					case MATHEMATIK_1: printf("Mathematik 1"); // Case 1 => Mathematik 1
 						
 						// Auswahl Untermenü Mathe 1
 						printf("\n");
@@ -82,23 +108,23 @@ int main()
 						printf("-3- Quiz\n");
 						printf("-4- Hangman\n");
 						printf("Bitte gib eine Zahl ein: ");
-						scanf("%i", &Mathematik1);
+						scanf("%i", &mathematik_1);
 
 						// New Line
 						printf("\n");
 				
-						switch(Mathematik1) // Switch Mathematik 1
+						switch(mathematik_1) // Switch Mathematik 1
 						{
 							case 1: printf("Linalg \n");
 								linAlg();
 								break;
-							case 2: printf("Trigonometrische Funktionen\n");
+							case TRIGONOMETRISCHE_FUNKTIONEN: printf("Trigonometrische Funktionen\n");
 								Trigo();
 								break;
-							case 3: printf("Quiz \n");
+							case MATHEMATIK_1_QUIZ: printf("Quiz \n");
 								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","Mathematik_1");
 								break;
-							case 4: printf("Hangman \n");
+							case HANGMAN: printf("Hangman \n");
 								hangman();
 								break;
 							default: printf("Falscher Wert!");
@@ -106,7 +132,7 @@ int main()
 						}
 					break;
 					
-					case 2: printf("Mathematik 2"); // Case 2 => Mathematik 2
+					case MATHEMATIK_2: printf("Mathematik 2"); // Case 2 => Mathematik 2
 						
 						// Auswahl Untermenü Mathe 2
 						printf("\n");
@@ -116,34 +142,34 @@ int main()
 				}
 				break;
 
-			case 2: printf("\nPhysik"); // Case 2 => Physik
+			case PHYSIK: printf("\nPhysik"); // Case 2 => Physik
 			
 				// Auswahl Untermenü Physik
 				printf("\n");
 				printf("-1- Physik 1\n");
 				printf("-2- Physik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Physik);
+				scanf("%i", &physik);
 
 				// New Line
 				printf("\n");
 				
-				switch(Physik) // Swtich Physik
+				switch(physik) // Swtich Physik
 				{
-					case 1: printf("Physik 1"); // Case 1 => Physik 1
+					case PHYSIK_1: printf("Physik 1");
 						
 						// Auswahl Untermenü Physik 1
 						printf("\n");
 						printf("-1- Quiz\n");
 						printf("Bitte gib eine Zahl ein: ");
-						scanf("%i", &Physik1);
+						scanf("%i", &physik_1);
 
 						// New Line
 						printf("\n");
 				
-						switch(Physik1) // Switch Physik 1
+						switch(physik_1) // Switch Physik 1
 						{
-							case 1: printf("Quiz");
+							case PHYSIK_1_QUIZ: printf("Quiz");
 								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "Physik_1");
 							break;
 							default: printf("Falscher Wert!");
@@ -151,7 +177,7 @@ int main()
 						}
 					break;
 					
-					case 2: printf("Physik 2"); // Case 2 => Physik 2
+					case PHYSIK_2: printf("Physik 2");
 						
 						// Auswahl Untermenü Physik 2
 						printf("\n");
@@ -161,21 +187,21 @@ int main()
 				}
 				break;
 				
-			case 3: printf("Optik"); // Case 3 => Optik
+			case OPTIK: printf("Optik");
 				
 				// Auswahl Untermenü Optik
 				printf("\n");
 				printf("-1- Optik 1\n");
 				printf("-2- Optik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Optik);
+				scanf("%i", &optik);
 
 				// New Line
 				printf("\n");
 				
-				switch(Optik) // Switch Optik
+				switch(optik) // Switch Optik
 				{
-					case 1: printf("Optik 1"); // Case 1 => Optik 1
+					case OPTIK_1: printf("Optik 1");
 						
 						// Auswahl Untermenü Optik 1
 						printf("\n");
@@ -183,28 +209,28 @@ int main()
 						printf("-2- Quiz\n");
 						printf("-3- Spiegelsimulation\n");
 						printf("Bitte gib eine Zahl ein: ");
-						scanf("%i", &Optik1);
+						scanf("%i", &optik_1);
 
 						// New Line
 						printf("\n");
 				
-						switch(Optik1) // Switch Optik1
+						switch(optik_1) // Switch Optik1
 						{
-							case 1: printf("Formeln\n"); // Case 1 => Formeln
+							case FORMELN: printf("Formeln\n");
 								Main_Optikformeln();
 							break;
-							case 2: printf("Quiz\n"); // Case 2 => Quiz
+							case OPTIK_1_QUIZ: printf("Quiz\n");
 								Optik1_Quiz();
 							break;
-							case 3: printf("Spiegelsimulation\n"); // Case 3 => Spiegelsimulation
-								optik();
+							case SPIEGELSIMULATION: printf("Spiegelsimulation\n");
+								Spiegelsimulation();
 							break;
 							default: printf("Falscher Wert!\n"); // Default Case
 							break;
 						}
 					break;
 					
-					case 2: printf("Optik 2"); // Case 2 => Optik 2
+					case OPTIK_2: printf("Optik 2");
 						
 						// Auswahl Untermenü Optik 2
 						printf("\n");
@@ -213,34 +239,34 @@ int main()
 				}
 				break;
 				
-			case 4: printf("Elektronik"); // Case 4 => Elektronik
+			case ELEKTRONIK: printf("Elektronik"); // Case 4 => Elektronik
 			
 				// Auswahl Untermenü Elektronik
 				printf("\n");
 				printf("-1- Elektronik 1\n");
 				printf("-2- Elektronik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Elektronik);
+				scanf("%i", &elektronik);
 
 				// New Line
 				printf("\n");
 				
-				switch(Elektronik) // Switch Elektronik
+				switch(elektronik) // Switch Elektronik
 				{
-					case 1: printf("Elektronik 1"); // Case 1 => Elektronik 1
+					case ELEKTRONIK_1: printf("Elektronik 1");
 						
 						// Auswahl Untermenü Elektronik 1
 						printf("\n");
 						printf("-1- Quiz\n");
 						printf("Bitte gib eine Zahl ein: ");
-						scanf("%i", &Elektronik1);
+						scanf("%i", &elektronik_1);
 
 						// New Line
 						printf("\n");
 				
-						switch(Elektronik1) // Swtich Elektronik1
+						switch(elektronik_1) // Swtich Elektronik1
 						{
-							case 1: printf("Quiz"); // Case 1 => Elektronik
+							case ELEKTRONIK_1_QUIZ: printf("Quiz");
 								elQuiz();
 							break;
 							default: printf("Falscher Wert!"); // Default Case => Falscher Wert
@@ -248,7 +274,7 @@ int main()
 						}
 					break;
 					
-					case 2: printf("Elektronik 2"); // Case 2 => Elektronik 2
+					case ELEKTRONIK_2: printf("Elektronik 2");
 						
 						// Auswahl Untermenü Elektronik 2
 						printf("\n");
@@ -258,59 +284,78 @@ int main()
 				}
 				break;
 			
-			case 5: printf("Informatik\n");
+			case INFORMATIK: printf("Informatik\n");
 
 				// Auswahl Untermenü Informatik
-				printf("-1- Quiz\n");
+				printf("-1- Informatik_1\n");
+                printf("-2- Informatik_2\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Informatik);
+				scanf("%i", &informatik);
 
 				printf("\n");
 
-				switch (Informatik)
+				switch (informatik)
 				{
-				case 1:
-					inf1_quiz();
+				case INFORMATIK_1:
+                    
+                    // Auswahlen Untermenü Infromatik_1
+                    printf("-1- Quiz");
+                    printf("Bitte gib eine Zahl ein: ");
+                    scanf("%i", &informatik_1);
+
+                    switch (informatik_1)
+                    {
+                    case INFORMATIK_1_QUIZ:
+                        inf1_quiz();
+                        break;
+                    
+                    default:
+                        break;
+                    }
+					
 					break;
 				
+                case INFORMATIK_2:
+                    printf("Gids no noed du Streber \n");
+                    break;
 				default:
 					break;
 				}
 				break;
 
-			case 6: printf("Converter"); // Case 5 => Converter
+			case CONVERTER: printf("Converter");
 			
 				// Auswahl Untermenü Converter
 				printf("\n");
 				printf("-1- Zahlensystem\n");
 				printf("-2- Einheiten\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Converter);
+				scanf("%i", &converter);
 
 				// New Line
 				printf("\n");
 				
-				switch(Converter) // Switch Converter
+				switch(converter) // Switch Converter
 				{
-					case 1: printf("Zahlensystem \n"); // Case 1 => Zahlensystem
+					case ZAHLENSYSTEM: printf("Zahlensystem \n");
 						NumberConverter();
 					break;
-					case 2: printf("Einheiten"); // Case 2 => Einheiten
+					case EINHEITEN: printf("Einheiten");
 						Einheiten_Konverter();
 					break;	
 				}
 				break;
 			
-			case 7: printf("Spiele\n");
+			case SPIELE: printf("Spiele\n");
 				// Auswahl Untermenü Converter
 				printf("-1- TicTacToe\n");
                 printf("-2- Lost&Found\n");
 				printf("Bitte gib eine Zahl ein: ");
-				scanf("%i", &Spiele);
+				scanf("%i", &spiele);
 
-				switch (Spiele)
+				switch (spiele)
 				{
-				case 1:
+				case TICTACTOE:
 					TicTacToe();
 					break;
 				
@@ -325,7 +370,7 @@ int main()
 
 				break;
 
-			case 8: printf("Auswertung\n"); // Case 6 => Auswertung
+			case AUSWERTUNG: printf("Auswertung\n");
 
 				// Auswertung Mathematik
 				printf("Mathematik_1\n");
@@ -347,7 +392,7 @@ int main()
 				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
 			break;
 
-			case 9: printf("Exit\n"); // Exit program
+			case EXIT: printf("Exit\n");
 				return 0;
 				break;
 			
