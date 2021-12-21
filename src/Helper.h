@@ -1,6 +1,6 @@
 // Enumeration Hauptmenu
 typedef enum {
-    MATHEMATIK,
+    MATHEMATIK = 1,
     PHYSIK,
     OPTIK,
     ELEKTRONIK,
@@ -8,18 +8,18 @@ typedef enum {
     CONVERTER,
     SPIELE,
     AUSWERTUNG,
-    EXIS      
-} Hauptmenue;
+    EXIT      
+} Hauptmenu;
 
 // Enumeration Mathematik
 typedef enum {
-          MATHEMATIK_1,
+          MATHEMATIK_1 = 1,
           MATHEMATIK_2
 } Mathematik;
 
 // Enumeration Mathematik_1
 typedef enum {
-          LINALG,
+          LINALG = 1,
           TRIGONOMETRISCHE_FUNKTIONEN,
           QUIZ,
           HANGMAN

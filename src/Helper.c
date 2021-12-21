@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "Helper.h"
 #include "Functions/importFromCSV/importFromCSV.h"
 #include "Mathematik/Mathematik_1/Hangman/piehangman.h"
 #include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
@@ -25,18 +26,20 @@
 #include "Elektronik/Elektronik_1/elektronikQuiz.h"
 #include "Konverter/Zahlenkonverter/zahlenkonverter.h"
 
+
+// Variablen
+Hauptmenu hauptmenu = 0;
+int Mathematik, Mathematik1 = 0;
+int Physik, Physik1 = 0;
+int Optik, Optik1 = 0;
+int Elektronik, Elektronik1 = 0;
+int Converter = 0;
+int Informatik = 0;
+int Spiele = 0;
+
 int main()
 {
 	while (1) {
-		// Variablen
-		int Hauptmenu = 0;
-		int Mathematik, Mathematik1 = 0;
-		int Physik, Physik1 = 0;
-		int Optik, Optik1 = 0;
-		int Elektronik, Elektronik1 = 0;
-		int Converter = 0;
-		int Informatik = 0;
-		int Spiele = 0;
 	
 	
 		// Auswahlmenü Hauptmenu
