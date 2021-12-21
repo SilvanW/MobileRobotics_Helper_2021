@@ -20,6 +20,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "elektronikQuiz.h"
+#include "../../Functions/getTime/getTime.h"
+#include "../../Functions/exportToCSV/exportToCSV.h"
 
 //-----------------------------------------------
 //Definition Fragen 
@@ -625,34 +627,7 @@ float auswertung(char punkte, char punktestand)
         printf("I don't want you to be hopeful. I want you to panic.\n - Greta Thunberg\n");
     }
 
-    exportiereZuCSVFile("Results.csv", "20.12.21", "16:00", "Elektronikquiz", (int)percent);
+    exportToCSV("Auswertung/elektronikQuiz.csv", getDate() , getTime() , "Elektronikquiz", (int)percent);
 
     return percent;
-}
-
-/**
- * Exportieren der Resultate in ein .csv
- * Author: Silvan Wiedmer
- * 
- * Filename:    Name der anzulegenden Datei
- * Date:        Datum
- * Time:        Uhrzeit
- * Theme:       Gebiet des Resultates
- * Points:      Erzieltes Resultat
- */
-int exportiereZuCSVFile(char Filename[50], char Date[50], char Time[50], char Theme[50], int Points) 
-{
-          // Define File
-          FILE *fpt;
-
-          // Open File in write mode
-          fpt = fopen(Filename, "a");
-
-          // Append Data to File
-          fprintf(fpt,"%s, %s, %s, %d\n", Date, Time, Theme, Points);
-
-          // Close File
-          fclose(fpt);
-
-          return 0;
 }
