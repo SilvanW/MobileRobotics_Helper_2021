@@ -87,6 +87,7 @@ int main()
 						switch(Mathematik1) // Switch Mathematik 1
 						{
 							case 1: printf("Linalg \n");
+								printf("Linalg wo?\n");
 								break;
 							case 2: printf("Trigonometrische Funktionen\n");
 								Trigo();
@@ -106,7 +107,7 @@ int main()
 						
 						// Auswahl Untermenü Mathe 2
 						printf("\n");
-						printf("Gids no noed du Streber");
+						printf("Gids no noed du Streber \n");
 					break;
 						
 				}
@@ -151,7 +152,7 @@ int main()
 						
 						// Auswahl Untermenü Physik 2
 						printf("\n");
-						printf("Gids no noed du Streber");
+						printf("Gids no noed du Streber \n");
 					break;
 						
 				}
@@ -204,7 +205,7 @@ int main()
 						
 						// Auswahl Untermenü Optik 2
 						printf("\n");
-						printf("Gids no noed du Streber");
+						printf("Gids no noed du Streber \n");
 					break;	
 				}
 				break;
@@ -248,7 +249,7 @@ int main()
 						
 						// Auswahl Untermenü Elektronik 2
 						printf("\n");
-						printf("Gids no noed du Streber");
+						printf("Gids no noed du Streber \n");
 					break;
 						
 				}
