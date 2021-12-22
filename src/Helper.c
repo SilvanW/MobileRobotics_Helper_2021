@@ -145,7 +145,6 @@ int main()
 					case MATHEMATIK_2: printf("Mathematik 2\n");
 						
 						// Auswahl Untermenü Mathe 2
-						printf("\n");
 						printf("Gids no noed du Streber\n");
 					break;
 						
@@ -197,7 +196,7 @@ int main()
 					case PHYSIK_2: printf("Physik 2\n");
 						
 						// Auswahl Untermenü Physik 2
-						printf("Gids no noed du Streber \n");
+						printf("Gids no noed du Streber\n");
 					break;
 						
 				}
@@ -298,6 +297,7 @@ int main()
 						switch(elektronik_1)
 						{
 							case ELEKTRONIK_1_QUIZ: printf("Quiz\n");
+								// call elQuiz() function
 								elQuiz();
 							break;
 							default: printf("Falscher Wert!\n"); // Default Case => Falscher Wert
@@ -308,7 +308,6 @@ int main()
 					case ELEKTRONIK_2: printf("Elektronik 2\n");
 						
 						// Auswahl Untermenü Elektronik 2
-						printf("\n");
 						printf("Gids no noed du Streber\n");
 					break;
 						
@@ -344,7 +343,7 @@ int main()
 					// Switch Informatik_1
                     switch (informatik_1)
                     {
-                    case INFORMATIK_1_QUIZ:
+                    case INFORMATIK_1_QUIZ: printf("Quiz\n");
 						// Call inf1_quiz() function
                         inf1_quiz();
                         break;
@@ -355,7 +354,7 @@ int main()
 					
 					break;
 				
-                case INFORMATIK_2: printf("Informatik 2");
+                case INFORMATIK_2: printf("Informatik 2\n");
                     printf("Gids no noed du Streber \n");
                     break;
 				default:
@@ -404,12 +403,12 @@ int main()
 				// Switch spiele
 				switch (spiele)
 				{
-				case TICTACTOE:
+				case TICTACTOE: printf("TicTacToe\n");
 					// Call TicTacToe() function
 					TicTacToe();
 					break;
 				
-                case LOST_FOUND:
+                case LOST_FOUND: printf("Lost&Found\n");
 					// Call lostfound() function
                     lostfound();
                     break;
@@ -451,12 +450,12 @@ int main()
 				return 0;
 				break;
 			
-			default: printf("Falscher Wert!");
+			default: printf("Falscher Wert!\n");
 			break;
 		}
 	}
 	
 	// Verabschiedung
-	printf("\nAuf Wiedersehen! \n");
+	printf("\nAuf Wiedersehen!\n");
 	return 0;
 }
