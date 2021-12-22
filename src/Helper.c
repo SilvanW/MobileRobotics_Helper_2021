@@ -5,7 +5,21 @@
 * Erstellungsdatum: 13.12.21
 * Version: 1.0 - Aufruf Export und CSV
 * Version: 1.1 - Lesen von Ausertungs CSV
-* Version: 1.2 - Hangman implementiert
+* Version: 1.2.0 - Hangman implementiert
+* Version: 1.2.1 - INF1_quiz implementiert
+* Version: 1.2.2 - Multiple_Choice implementiert
+* Version: 1.2.3 - Main_Optikformeln implementiert
+* Version: 1.2.4 - TicTacToe implementiert
+* Version: 1.2.5 - Optik1 implementiert
+* Version: 1.2.6 - Einheiten_Konverter implementiert
+* Version: 1.2.7 - Spiegeldarstellung implementiert
+* Version: 1.2.8 - Trigonometrische_Funktionen implementiert
+* Version: 1.2.9 - elektronikQuiz implementiert
+* Version: 1.2.10 - zahlenkonverter implementiert
+* Version: 1.2.11 - lin_alg implementiert
+* Version: 1.2.12 - lostfound implementiert
+* Version: 1.3.0 - Helper.h file added => Switch Cases now from Header enums
+* Version: 1.3.1 - Compiler Warnings in elektronikQuiz fixed
 */
 
 
