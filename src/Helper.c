@@ -120,7 +120,7 @@ int main()
 								Trigo();
 								break;
 							case MATHEMATIK_1_QUIZ: printf("Quiz\n");
-								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","Mathematik_1");
+								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","MultipleChoice");
 								break;
 							case HANGMAN: printf("Hangman\n");
 								hangman();
@@ -166,7 +166,7 @@ int main()
 						switch(physik_1) // Switch Physik 1
 						{
 							case PHYSIK_1_QUIZ: printf("Quiz\n");
-								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "Physik_1");
+								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "MultipleChoice");
 							break;
 							default: printf("Falscher Wert!\n");
 							break;
@@ -372,6 +372,7 @@ int main()
 
 				// Auswertung Optik
 				printf("Optik_1\n");
+                importFromCSV("Auswertung/Optik_1/Quiz.csv");
 				importFromCSV("Auswertung/Optik_1/Bildentstehung_Spiegel_Linsen.csv");
 				importFromCSV("Auswertung/Optik_1/Mehrlinsen_Mehrspiegelsysteme_optische_Instrumente.csv");
 				importFromCSV("Auswertung/Optik_1/Reflexion_Brechung.csv");

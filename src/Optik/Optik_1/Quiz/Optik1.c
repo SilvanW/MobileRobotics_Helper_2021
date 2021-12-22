@@ -15,6 +15,8 @@ Beschreibung:
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../../../Functions/exportToCSV/exportToCSV.h"
+#include "../../../Functions/getTime/getTime.h"
 
 
 //--- Eigene Datentypen-----------------------------
@@ -83,6 +85,9 @@ int Optik1_Quiz (void){
 	printf("Test Optik abgeschlossen.\n");
 	printf("   Sie haben %d von 12 Aufgaben richtig geloest!\n", CNT_correctAnsw);
 	printf("-----------------------------------------------------------------------\n\n");
+
+	int prozent = (float)CNT_correctAnsw/12*100;
+	exportToCSV("Auswertung/Optik_1/Quiz.csv", getDate(), getTime(), "Quiz", prozent);
 
 	return 0;
 }
