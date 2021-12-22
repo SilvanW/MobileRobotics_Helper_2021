@@ -62,6 +62,7 @@ int galgenpart7 = 147;
 int galgenpart8 = 193;
 int galgenpart9 = 193;
 #else
+// Galgenteile
 int galgenpart1 = 61;
 int galgenpart2 = 124;
 int galgenpart3 = 124;

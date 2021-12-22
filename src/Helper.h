@@ -21,7 +21,7 @@ typedef enum {
 typedef enum {
           LINALG = 1,
           TRIGONOMETRISCHE_FUNKTIONEN,
-          MATHEMATIK_1_QUIZ,
+          MATHEMATIK_1_MULTIPLE_CHOICE,
           HANGMAN
 } Mathematik_1;
 

@@ -103,7 +103,7 @@ int main()
 						// Auswahl Untermenü Mathe 1
 						printf("-1- Linalg\n");
 						printf("-2- Trigonometrische Funktionen\n");
-						printf("-3- Quiz\n");
+						printf("-3- Multiple Choice\n");
 						printf("-4- Hangman\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &mathematik_1);
@@ -119,7 +119,7 @@ int main()
 							case TRIGONOMETRISCHE_FUNKTIONEN: printf("Trigonometrische Funktionen\n");
 								Trigo();
 								break;
-							case MATHEMATIK_1_QUIZ: printf("Quiz\n");
+							case MATHEMATIK_1_MULTIPLE_CHOICE: printf("Multiple Choice\n");
 								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","MultipleChoice");
 								break;
 							case HANGMAN: printf("Hangman\n");
