@@ -18,10 +18,11 @@
 * Version: 1.2.10 - zahlenkonverter implementiert
 * Version: 1.2.11 - lin_alg implementiert
 * Version: 1.2.12 - lostfound implementiert
-* Version: 1.3.0 - Helper.h file added => Switch Cases now from Header enums
-* Version: 1.3.1 - Compiler Warnings in elektronikQuiz fixed
+* Version: 1.3.0 - Helper.h file added => Switch Cases neu in header enums
+* Version: 1.3.1 - Compiler Warnungen in elektronikQuiz behoben
 */
 
+// Include Helper.h
 #include "Helper.h"
 
 // Variablen
