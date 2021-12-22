@@ -545,7 +545,7 @@ char elQuiz(void)
  */
 char multipleChoice(t_multipleChoice frage)
 {
-    char answer = 0;    //Eingabevariable
+    int answer = 0;    //Eingabevariable
 
     printf("%s\n", frage.question);      //Ausgabe von Frage
 
@@ -557,7 +557,7 @@ char multipleChoice(t_multipleChoice frage)
     do
     {
         printf("Auswahl: ");    //
-        scanf("%u", &answer);   //Eingabe von Auswahl
+        scanf("%i", &answer);   //Eingabe von Auswahl
         fflush(stdin);
     }
     while ((answer <= 0) || (answer > 4));  //Abfangen von unzulässigen Antworten
@@ -586,11 +586,11 @@ char quitQuiz(void)
     do
     {
         printf("Wollen Sie weiterfahren? (y/n): ");
-        scanf("%s", &yesNo);
+        scanf("%s", yesNo);
         fflush(stdin);
-    } while ((strcmp(&yesNo, "y") != 0) && ((strcmp(&yesNo, "n") != 0)));
+    } while ((strcmp(yesNo, "y") != 0) && ((strcmp(yesNo, "n") != 0)));
 
-    if(strcmp(&yesNo, "y") == 0)
+    if(strcmp(yesNo, "y") == 0)
     {
         return 1;
     }

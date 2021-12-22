@@ -168,7 +168,7 @@ int main()
 					case PHYSIK_1: printf("Physik 1\n");
 						
 						// Auswahl Untermenü Physik 1
-						printf("-1- Quiz\n");
+						printf("-1- Multiple Choice\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &physik_1);
 
@@ -180,7 +180,7 @@ int main()
 				
 						switch(physik_1) // Switch Physik 1
 						{
-							case PHYSIK_1_QUIZ: printf("Quiz\n");
+							case PHYSIK_1_MULTIPLE_CHOICE: printf("Multiple Choice\n");
 								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "MultipleChoice");
 							break;
 							default: printf("Falscher Wert!\n");
@@ -385,7 +385,7 @@ int main()
 					TicTacToe();
 					break;
 				
-                case 2:
+                case LOST_FOUND:
                     fflush(stdin);
                     lostfound();
                     break;

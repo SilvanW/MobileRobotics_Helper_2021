@@ -38,7 +38,7 @@ typedef enum {
 
 // Enumeration Physik_1
 typedef enum {
-    PHYSIK_1_QUIZ = 1
+    PHYSIK_1_MULTIPLE_CHOICE = 1
 } Physik_1;
 
 // Enumeration Physik_2
@@ -104,5 +104,6 @@ typedef enum {
 
 // Enumeration Spiele
 typedef enum {
-    TICTACTOE = 1
+    TICTACTOE = 1,
+    LOST_FOUND
 } Spiele;

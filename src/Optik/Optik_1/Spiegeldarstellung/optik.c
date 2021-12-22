@@ -227,7 +227,7 @@ void Spiegelsimulation()
 				printf("                ,g@@@NMPPMN@@@@@@@@g            ]@@@@@@@   g@@P`      ,  '\"B@@@g$@@@@@\n");                                                                   
 				printf("             ,g@@P^          *&@@@@@@           ]@@@@@@  ,@@P        $@P     $@@@@@@@@P\n");                                                                  
 				printf("           ]@@@@-               $@@\"            ]@@@@@  y@@P         '$@,    gP&@@@@@@@\n");                                                                  
-				printf("           @@@P            ,gggg,]@@,            $@@@@ j@@             %B@@@@@` \"@@%@@@g\n");                                                                 
+				printf("           @@@P            ,gggg,]@@,            $@@@@ j@@              B@@@@@` \"@@@@@@g\n");                                                                 
 				printf("          $@@@        ,g@@N\"-   '\"RB@@g          $@@@P $@                        '@@\"@@@g\n");                                                                
 				printf("         ]@@@       ,@@R\"            $@@@g             ]@p                        ]@P \"@@@,\n");                                                              
 				printf("         @@@P      J@P                ]@@@@,            $@g                       '@@  ]@@@@\n");                                                             
@@ -243,8 +243,8 @@ void Spiegelsimulation()
 				printf("      $@@                             ]@@  ]@@P\"*PM\"                               ]@@        $@P\n");                                                        
 				printf("      $@@                             ]@@@@@P                     ,,,               ]@@       $@P\n");                                                        
 				printf("      @@@P                            @@@                       g@@RMB@g              $b      $@P\n");                                                        
-				printf("      @@@@                           ]@@                     ,g@P     '%@g     ,,      @      $@P\n");                                                        
-				printf("      $@@@P                          ]@@              g@\"\"%@@@@C        $@@, g@\"\"%@@g  $F     $@P\n");                                                        
+				printf("      @@@@                           ]@@                     ,g@P     '@@g     ,,      @      $@P\n");                                                        
+				printf("      $@@@P                          ]@@              g@\"\"@@@@@C        $@@, g@\"\"@@@g  $F     $@P\n");                                                        
 				printf("      $@@@@                          $@F            g@@               ,@R\"\"$@@     '*B @P     $@-\n");                                                        
 				printf("      ]@@@@W                         @@            $@@         ,,,,  ,@@    $@        @@      ]@@ \n");                                                       
 				printf("       $@@@@                        ]@P           ]@@       g@@R\"\"$@@@@P   ,,,,,,,,gg@@C       @@@\n");                                                      
@@ -255,9 +255,9 @@ void Spiegelsimulation()
 				printf("            ]@@g                @@   ,g@@@@@g  $@P        ,@@ \"                             @@@P\n");                                                         
 				printf("             $@B@,             $@@  ,@P   -\"B@@@P    ,ggNP`                                @@@`\n");                                                          
 				printf("             ]@ ]@@g           \"RB@@@@@g,,   -`  g@@@NP                                   $@@P\n");                                                           
-				printf("              @p  %@@@g            `\"**MMNNBB@@@@R\"                                      ]@@@\n");                                                            
+				printf("              @p  @@@@g            `\"**MMNNBB@@@@R\"                                      ]@@@\n");                                                            
 				printf("              $@    \"B@@@g                                                              ,@@@\n");                                                             
-				printf("               $@      \"%N@@                                                            $@@\n");                                                              
+				printf("               $@      \"@N@@                                                            $@@\n");                                                              
 				printf("                `*                                                                      B\"\n");
 				printf("\n\t\t-->WENN HERR BORER SAGT ES SEI NUR EINE ANNAEHERUNG ;))\n\n\n");
 			}
@@ -289,14 +289,14 @@ void Spiegelsimulation()
 				printf("              $@                                    www*`          j@       ,gggg      @@@g\n");
 				printf("               %%@,                                                ,@@       ]@g  g@@@ ]@@@@\n");
 				printf("                \"@g                                             ,g@P         @@MR@@@@r]@P\n");
-				printf("                  %@                                          ,@@\"           ]@  $@\"%% ]@F\n");
+				printf("                  @@                                          ,@@\"           ]@  $@\"%% ]@F\n");
 				printf("                  ]@g                                     ,g@N\"              '` \"F    `\n");
 				printf("         ,      ggg,*B@g                               ,g@@\"\n");
 				printf("    g@@@@M^;@@@,$[]@  `*B@gg,,,,,  ,,,,        ,,,,,g@@M\"\n");
 				printf("      $@@ggg4@@@@@@@\"      '\"\"**P**P*M@@M*******P*\"\"*'\n");
 				printf("      %%@@\" J@P'\"]@C                  ]@@@g              ,,,\n");
 				printf("        ]@                g            $@@M@g             *PN@w\n");
-				printf("         '               @@            $@\%@ \"\%@,              %%P\n");
+				printf("         '               @@            $@@@@ \"@@@,              %%P\n");
 				printf("                         @  $@  ,      $@ $g  '%%@g          \"N,\n");
 				printf("                            $`g@'      $@  @F    *N@      '@g %%g\n");
 				printf("                              @L      ]@`  $F      @        $g %%W     g\n");
