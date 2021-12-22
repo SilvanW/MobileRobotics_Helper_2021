@@ -380,6 +380,10 @@ int main()
 				// Auswertung Elektronik
 				printf("Elektronik_1\n");
 				importFromCSV("Auswertung/Elektronik_1/elektronikQuiz.csv");
+
+                // Auswertung Informatik
+                printf("Informatik_1\n");
+                importFromCSV("Auswertung/Informatik_1/informatikQuiz.csv");
 			break;
 
 			case EXIT: printf("Exit\n");

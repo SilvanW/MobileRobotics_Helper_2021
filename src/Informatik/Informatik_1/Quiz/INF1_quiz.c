@@ -14,6 +14,8 @@ Changelog:
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../../../Functions/exportToCSV/exportToCSV.h"
+#include "../../../Functions/getTime/getTime.h"
 
 // Header
 #include "INF1_quiz.h"
@@ -121,6 +123,8 @@ void inf1_quiz()
 	"================================================================\n"
 	"================================================================\n", 
 	punktzahl, anzf);
+	int prozent = (float)punktzahl/anzf*100;
+	exportToCSV("Auswertung/Informatik_1/informatikQuiz.csv", getDate(), getTime(), "Informatik_1", prozent);
 	
 // Ende Hauptfunktion
 }
