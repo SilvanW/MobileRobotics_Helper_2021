@@ -463,6 +463,8 @@ char elQuiz(void)
     char punktestand = 0;
     char name[2] ={}; 
 
+    fflush(stdin);
+
     printf("Herzlich Wilkommen zum Elektronikquiz!\n\n");
     printf("Sie koennen den Test nach allen 10 Fragen beenden\n");
     printf("Name Bitte: ");
