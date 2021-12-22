@@ -22,25 +22,7 @@
 * Version: 1.3.1 - Compiler Warnings in elektronikQuiz fixed
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 #include "Helper.h"
-#include "Functions/importFromCSV/importFromCSV.h"
-#include "Mathematik/Mathematik_1/Hangman/piehangman.h"
-#include "Informatik/Informatik_1/Quiz/INF1_quiz.h"
-#include "Functions/MultipleChoice/Multiple_Choice.h"
-#include "Optik/Optik_1/Optikformeln/Main_Optikformeln.h"
-#include "Spiele/TicTacToe/TicTacToe.h"
-#include "Optik/Optik_1/Quiz/Optik1.h"
-#include "Konverter/Einheiten/Einheiten_Konverter_main.h"
-#include "Optik/Optik_1/Spiegeldarstellung/optik.h"
-#include "Mathematik/Mathematik_1/Trigonometrie/Trigonometrische_Funktionen_Main.h"
-#include "Elektronik/Elektronik_1/elektronikQuiz.h"
-#include "Konverter/Zahlenkonverter/zahlenkonverter.h"
-#include "Mathematik/Mathematik_1/Linalg/lin_alg.h"
-#include "Spiele/Lost_Found/lostfound.h"
 
 // Variablen
 Hauptmenu hauptmenu = 0;

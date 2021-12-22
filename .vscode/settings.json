@@ -1,9 +1,11 @@
 {
           "files.associations": {
-                    "exportcsv.h": "c",
-                    "stdio.h": "c",
-                    "unistd.h": "c",
-                    "multiple_choice.h": "c",
-                    "piehangman.h": "c"
+            "exportcsv.h": "c",
+            "stdio.h": "c",
+            "unistd.h": "c",
+            "multiple_choice.h": "c",
+            "piehangman.h": "c",
+            "importfromcsv.h": "c",
+            "inf1_quiz.h": "c"
           }
 }
