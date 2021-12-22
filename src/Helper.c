@@ -79,6 +79,9 @@ int main()
 		printf("Bitte gib eine Zahl ein: ");
 		scanf("%i", &hauptmenu);
 
+		// flush console
+		fflush(stdin);
+
 		// New Line
 		printf("\n");	
 	
@@ -92,6 +95,9 @@ int main()
 				printf("-2- Mathematik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &mathematik);
+
+				// flush console
+				fflush(stdin);
 
 				// New Line
 				printf("\n");
@@ -107,6 +113,9 @@ int main()
 						printf("-4- Hangman\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &mathematik_1);
+
+						// flush console
+						fflush(stdin);
 
 						// New Line
 						printf("\n");
@@ -148,6 +157,9 @@ int main()
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &physik);
 
+				// flush console
+				fflush(stdin);
+
 				// New Line
 				printf("\n");
 				
@@ -159,6 +171,9 @@ int main()
 						printf("-1- Quiz\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &physik_1);
+
+						// flush console
+						fflush(stdin);
 
 						// New Line
 						printf("\n");
@@ -191,6 +206,9 @@ int main()
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &optik);
 
+				// flush console
+				fflush(stdin);
+
 				// New Line
 				printf("\n");
 				
@@ -204,6 +222,9 @@ int main()
 						printf("-3- Spiegelsimulation\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &optik_1);
+
+						// flush console
+						fflush(stdin);
 
 						// New Line
 						printf("\n");
@@ -240,6 +261,9 @@ int main()
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &elektronik);
 
+				// flush console
+				fflush(stdin);
+
 				// New Line
 				printf("\n");
 				
@@ -251,6 +275,9 @@ int main()
 						printf("-1- Quiz\n");
 						printf("Bitte gib eine Zahl ein: ");
 						scanf("%i", &elektronik_1);
+
+						// flush console
+						fflush(stdin);
 
 						// New Line
 						printf("\n");
@@ -282,6 +309,9 @@ int main()
                 printf("-2- Informatik_2\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &informatik);
+
+				// flush console
+				fflush(stdin);
 
 				printf("\n");
 
@@ -322,6 +352,9 @@ int main()
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &converter);
 
+				// flush console
+				fflush(stdin);
+
 				// New Line
 				printf("\n");
 				
@@ -342,6 +375,9 @@ int main()
                 printf("-2- Lost&Found\n");
 				printf("Bitte gib eine Zahl ein: ");
 				scanf("%i", &spiele);
+
+				// flush console
+				fflush(stdin);
 
 				switch (spiele)
 				{
