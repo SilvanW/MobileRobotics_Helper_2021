@@ -180,11 +180,11 @@ void frage_stellen(List *list, char path [], char Theme []) {
   while(temp != NULL) {
     printf("%s\n",temp->frage);
 
-    scanf("%s",antwort_temp);
+    scanf("%s",&antwort_temp);
 
-    if(strcmp(antwort_temp, "Richtig") == 0) {
+    if(strcmp(&antwort_temp, "Richtig") == 0) {
       temp->antwort = 1;
-    } else if (strcmp(antwort_temp, "Falsch") == 0) {
+    } else if (strcmp(&antwort_temp, "Falsch") == 0) {
       temp->antwort = 0;
     } else {
       printf("Bitte gebe Richtig oder Falsch ein! Viel Erfolg bei der nächsten Frage, diese hast du verkackt!\n");
