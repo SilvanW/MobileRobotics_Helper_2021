@@ -104,5 +104,6 @@ typedef enum {
 
 // Enumeration Spiele
 typedef enum {
-    TICTACTOE = 1
+    TICTACTOE = 1,
+    LOST_FOUND
 } Spiele;

@@ -349,7 +349,7 @@ int main()
 					TicTacToe();
 					break;
 				
-                case 2:
+                case LOST_FOUND:
                     fflush(stdin);
                     lostfound();
                     break;
