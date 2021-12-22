@@ -463,6 +463,8 @@ char elQuiz(void)
     char punktestand = 0;
     char name[2] ={}; 
 
+    fflush(stdin);
+
     printf("Herzlich Wilkommen zum Elektronikquiz!\n\n");
     printf("Sie koennen den Test nach allen 10 Fragen beenden\n");
     printf("Name Bitte: ");
@@ -543,7 +545,7 @@ char elQuiz(void)
  */
 char multipleChoice(t_multipleChoice frage)
 {
-    char answer = 0;    //Eingabevariable
+    int answer = 0;    //Eingabevariable
 
     printf("%s\n", frage.question);      //Ausgabe von Frage
 
@@ -555,7 +557,7 @@ char multipleChoice(t_multipleChoice frage)
     do
     {
         printf("Auswahl: ");    //
-        scanf("%u", &answer);   //Eingabe von Auswahl
+        scanf("%i", &answer);   //Eingabe von Auswahl
         fflush(stdin);
     }
     while ((answer <= 0) || (answer > 4));  //Abfangen von unzulässigen Antworten
