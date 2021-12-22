@@ -67,7 +67,7 @@ int main()
 	while (1) {
 	
 		// Auswahlmenü Hauptmenu
-		printf("-1- Mathematik\n");
+		printf("\n-1- Mathematik\n");
 		printf("-2- Physik\n");
 		printf("-3- Optik\n");
 		printf("-4- Elektronik\n");
@@ -85,12 +85,12 @@ int main()
 		// New Line
 		printf("\n");	
 	
-		// switch case
+		// Switch Hauptmenu
 		switch(hauptmenu)
 		{
-			case MATHEMATIK: printf("Mathematik\n"); // Case 1 => Mathematik
+			case MATHEMATIK: printf("Mathematik\n");
 				
-				// Auswahl Untermenü Mathe
+				// Auswahl Mathematik
 				printf("-1- Mathematik 1\n");
 				printf("-2- Mathematik 2\n");
 				printf("Bitte gib eine Zahl ein: ");
@@ -102,9 +102,10 @@ int main()
 				// New Line
 				printf("\n");
 				
-				switch(mathematik) // Swtich Mathematik
+				// Switch Mathematik
+				switch(mathematik)
 				{
-					case MATHEMATIK_1: printf("Mathematik 1\n"); // Case 1 => Mathematik 1
+					case MATHEMATIK_1: printf("Mathematik 1\n");
 						
 						// Auswahl Untermenü Mathe 1
 						printf("-1- Linalg\n");
@@ -120,18 +121,23 @@ int main()
 						// New Line
 						printf("\n");
 				
-						switch(mathematik_1) // Switch Mathematik 1
+						// Switch Mathematik_1
+						switch(mathematik_1)
 						{
 							case 1: printf("Linalg\n");
+								// Call linAlg() function
 								linAlg();
 								break;
 							case TRIGONOMETRISCHE_FUNKTIONEN: printf("Trigonometrische Funktionen\n");
+								// Call Trigo() function
 								Trigo();
 								break;
 							case MATHEMATIK_1_MULTIPLE_CHOICE: printf("Multiple Choice\n");
+								// Call multiple_choice() function with Mathematik_1 questions
 								multiple_choice("Mathematik/Mathematik_1/test.csv", "Auswertung/Mathematik_1/MultipleChoice.csv","MultipleChoice");
 								break;
 							case HANGMAN: printf("Hangman\n");
+								// Call hangman() function
 								hangman();
 								break;
 							default: printf("Falscher Wert!\n");
@@ -139,7 +145,7 @@ int main()
 						}
 					break;
 					
-					case MATHEMATIK_2: printf("Mathematik 2\n"); // Case 2 => Mathematik 2
+					case MATHEMATIK_2: printf("Mathematik 2\n");
 						
 						// Auswahl Untermenü Mathe 2
 						printf("\n");
@@ -149,7 +155,7 @@ int main()
 				}
 				break;
 
-			case PHYSIK: printf("Physik\n"); // Case 2 => Physik
+			case PHYSIK: printf("Physik\n");
 			
 				// Auswahl Untermenü Physik
 				printf("-1- Physik 1\n");
@@ -163,7 +169,8 @@ int main()
 				// New Line
 				printf("\n");
 				
-				switch(physik) // Swtich Physik
+				// Switch Physik
+				switch(physik)
 				{
 					case PHYSIK_1: printf("Physik 1\n");
 						
@@ -178,9 +185,11 @@ int main()
 						// New Line
 						printf("\n");
 				
-						switch(physik_1) // Switch Physik 1
+						// Switch Physik_1
+						switch(physik_1)
 						{
 							case PHYSIK_1_MULTIPLE_CHOICE: printf("Multiple Choice\n");
+								// Call multiple_choice() function with Physik_1 questions
 								multiple_choice("Physik/Physik_1/test.csv", "Auswertung/Physik_1/MultipleChoice.csv", "MultipleChoice");
 							break;
 							default: printf("Falscher Wert!\n");
@@ -212,7 +221,8 @@ int main()
 				// New Line
 				printf("\n");
 				
-				switch(optik) // Switch Optik
+				// Switch Optik
+				switch(optik)
 				{
 					case OPTIK_1: printf("Optik 1\n");
 						
@@ -229,18 +239,22 @@ int main()
 						// New Line
 						printf("\n");
 				
-						switch(optik_1) // Switch Optik1
+						// Switch Optik_1
+						switch(optik_1)
 						{
 							case FORMELN: printf("Formeln\n");
+								// Call Main_Optikformeln() function
 								Main_Optikformeln();
 							break;
 							case OPTIK_1_QUIZ: printf("Quiz\n");
+								// Call Optik1_Quiz() function
 								Optik1_Quiz();
 							break;
 							case SPIEGELSIMULATION: printf("Spiegelsimulation\n");
+								// Call Spiegelsimulation() function
 								Spiegelsimulation();
 							break;
-							default: printf("Falscher Wert!\n"); // Default Case
+							default: printf("Falscher Wert!\n");
 							break;
 						}
 					break;
@@ -253,7 +267,7 @@ int main()
 				}
 				break;
 				
-			case ELEKTRONIK: printf("Elektronik\n"); // Case 4 => Elektronik
+			case ELEKTRONIK: printf("Elektronik\n");
 			
 				// Auswahl Untermenü Elektronik
 				printf("-1- Elektronik 1\n");
@@ -267,7 +281,8 @@ int main()
 				// New Line
 				printf("\n");
 				
-				switch(elektronik) // Switch Elektronik
+				// Switch Elektronik
+				switch(elektronik)
 				{
 					case ELEKTRONIK_1: printf("Elektronik 1\n");
 						
@@ -282,7 +297,8 @@ int main()
 						// New Line
 						printf("\n");
 				
-						switch(elektronik_1) // Swtich Elektronik1
+						// Switch Elektronik_1
+						switch(elektronik_1)
 						{
 							case ELEKTRONIK_1_QUIZ: printf("Quiz\n");
 								elQuiz();
@@ -315,6 +331,7 @@ int main()
 
 				printf("\n");
 
+				// Switch Informatik
 				switch (informatik)
 				{
 				case INFORMATIK_1: printf("Informatik 1\n");
@@ -324,9 +341,14 @@ int main()
                     printf("Bitte gib eine Zahl ein: ");
                     scanf("%i", &informatik_1);
 
+					// flush console
+					fflush(stdin);
+
+					// Switch Informatik_1
                     switch (informatik_1)
                     {
                     case INFORMATIK_1_QUIZ:
+						// Call inf1_quiz() function
                         inf1_quiz();
                         break;
                     
@@ -358,12 +380,15 @@ int main()
 				// New Line
 				printf("\n");
 				
-				switch(converter) // Switch Converter
+				// Switch Converter
+				switch(converter)
 				{
 					case ZAHLENSYSTEM: printf("Zahlensystem\n");
+						// Call NumberConverter() function
 						NumberConverter();
 					break;
 					case EINHEITEN: printf("Einheiten\n");
+						// Call Einheiten_Konverter() function
 						Einheiten_Konverter();
 					break;	
 				}
@@ -379,14 +404,16 @@ int main()
 				// flush console
 				fflush(stdin);
 
+				// Switch spiele
 				switch (spiele)
 				{
 				case TICTACTOE:
+					// Call TicTacToe() function
 					TicTacToe();
 					break;
 				
                 case LOST_FOUND:
-                    fflush(stdin);
+					// Call lostfound() function
                     lostfound();
                     break;
 
